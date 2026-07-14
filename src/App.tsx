@@ -38,6 +38,7 @@ import PremiumHero from "./components/PremiumHero";
 import CommunityFeed from "./components/CommunityFeed";
 import DiscussionView from "./components/DiscussionView";
 import ProfileView from "./components/ProfileView";
+import TrendingCarousel from "./components/TrendingCarousel";
 
 const PREDICTION_CLOSING_TIME = "2026-07-15T18:30:00Z";
 
@@ -353,6 +354,15 @@ export default function App() {
                 onViewLeaderboardClick={() => setView("leaderboard")} 
                 isClosed={isPredictionClosed} 
                 closingTime={PREDICTION_CLOSING_TIME} 
+              />
+
+              {/* Trending Spotlight Carousel */}
+              <TrendingCarousel 
+                predictions={allPredictions}
+                onSelectPrediction={(pred) => {
+                  setSelectedPrediction(pred);
+                  setView("discussion");
+                }}
               />
 
               {/* MY ACTIVE PREDICTION CARD (Section 1) */}

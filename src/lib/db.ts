@@ -150,7 +150,7 @@ export async function seedMockPredictions(): Promise<void> {
     {
       id: "mock_messi",
       name: "Lionel Messi 🐐",
-      avatar: "Messi",
+      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Messi",
       match1: "Spain",
       match2: "Argentina",
       champion: "Argentina",
@@ -161,7 +161,7 @@ export async function seedMockPredictions(): Promise<void> {
       created_at: Date.now() - 3600000 * 5, // 5 hours ago
       share_id: "mock_messi",
       likes_count: 5200,
-      comments_count: 140,
+      comments_count: 3,
       agrees_count: 4800,
       views_count: 85000,
       shares_count: 1200
@@ -169,7 +169,7 @@ export async function seedMockPredictions(): Promise<void> {
     {
       id: "mock_ronaldo",
       name: "Cristiano Ronaldo 👑",
-      avatar: "Ronaldo",
+      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Ronaldo",
       match1: "France",
       match2: "Argentina",
       champion: "France",
@@ -180,7 +180,7 @@ export async function seedMockPredictions(): Promise<void> {
       created_at: Date.now() - 3600000 * 4, // 4 hours ago
       share_id: "mock_ronaldo",
       likes_count: 4800,
-      comments_count: 210,
+      comments_count: 2,
       agrees_count: 3100,
       views_count: 79000,
       shares_count: 950
@@ -188,7 +188,7 @@ export async function seedMockPredictions(): Promise<void> {
     {
       id: "mock_shakib",
       name: "Shakib Al Hasan 🏏",
-      avatar: "Shakib",
+      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Shakib",
       match1: "Spain",
       match2: "Argentina",
       champion: "Argentina",
@@ -199,7 +199,7 @@ export async function seedMockPredictions(): Promise<void> {
       created_at: Date.now() - 3600000 * 3, // 3 hours ago
       share_id: "mock_shakib",
       likes_count: 1200,
-      comments_count: 45,
+      comments_count: 2,
       agrees_count: 980,
       views_count: 15000,
       shares_count: 180
@@ -207,7 +207,7 @@ export async function seedMockPredictions(): Promise<void> {
     {
       id: "mock_niloy",
       name: "Niloy Hakim 🏆",
-      avatar: "Niloy",
+      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Niloy",
       match1: "France",
       match2: "Argentina",
       champion: "Argentina",
@@ -218,7 +218,7 @@ export async function seedMockPredictions(): Promise<void> {
       created_at: Date.now() - 3600000 * 2, // 2 hours ago
       share_id: "mock_niloy",
       likes_count: 15,
-      comments_count: 2,
+      comments_count: 1,
       agrees_count: 12,
       views_count: 240,
       shares_count: 8
@@ -226,7 +226,7 @@ export async function seedMockPredictions(): Promise<void> {
     {
       id: "mock_tamim",
       name: "Tamim Iqbal 🏏",
-      avatar: "Tamim",
+      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Tamim",
       match1: "Spain",
       match2: "Argentina",
       champion: "Argentina",
@@ -237,7 +237,7 @@ export async function seedMockPredictions(): Promise<void> {
       created_at: Date.now() - 3600000 * 1, // 1 hour ago
       share_id: "mock_tamim",
       likes_count: 650,
-      comments_count: 12,
+      comments_count: 2,
       agrees_count: 480,
       views_count: 6200,
       shares_count: 44
@@ -245,7 +245,7 @@ export async function seedMockPredictions(): Promise<void> {
     {
       id: "mock_pep",
       name: "Pep Guardiola 🧠",
-      avatar: "Pep",
+      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Pep",
       match1: "Spain",
       match2: "Argentina",
       champion: "Spain",
@@ -256,7 +256,7 @@ export async function seedMockPredictions(): Promise<void> {
       created_at: Date.now() - 1800000, // 30 mins ago
       share_id: "mock_pep",
       likes_count: 1800,
-      comments_count: 68,
+      comments_count: 1,
       agrees_count: 1400,
       views_count: 24000,
       shares_count: 320
@@ -264,7 +264,7 @@ export async function seedMockPredictions(): Promise<void> {
     {
       id: "mock_elon",
       name: "Elon Musk 🚀",
-      avatar: "Elon",
+      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Elon",
       match1: "France",
       match2: "England",
       champion: "England",
@@ -275,7 +275,7 @@ export async function seedMockPredictions(): Promise<void> {
       created_at: Date.now() - 900000, // 15 mins ago
       share_id: "mock_elon",
       likes_count: 14500,
-      comments_count: 890,
+      comments_count: 2,
       agrees_count: 8500,
       views_count: 350000,
       shares_count: 2800
@@ -283,7 +283,7 @@ export async function seedMockPredictions(): Promise<void> {
     {
       id: "mock_fahim",
       name: "Fahim Chowdhury 🇧🇩",
-      avatar: "Fahim",
+      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Fahim",
       match1: "Spain",
       match2: "Argentina",
       champion: "Argentina",
@@ -294,7 +294,7 @@ export async function seedMockPredictions(): Promise<void> {
       created_at: Date.now() - 600000, // 10 mins ago
       share_id: "mock_fahim",
       likes_count: 32,
-      comments_count: 3,
+      comments_count: 1,
       agrees_count: 24,
       views_count: 450,
       shares_count: 12
@@ -302,7 +302,7 @@ export async function seedMockPredictions(): Promise<void> {
     {
       id: "mock_zuck",
       name: "Mark Zuckerberg 👥",
-      avatar: "Zuck",
+      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Zuck",
       match1: "Spain",
       match2: "Argentina",
       champion: "Argentina",
@@ -313,7 +313,7 @@ export async function seedMockPredictions(): Promise<void> {
       created_at: Date.now() - 300000, // 5 mins ago
       share_id: "mock_zuck",
       likes_count: 3400,
-      comments_count: 180,
+      comments_count: 1,
       agrees_count: 2900,
       views_count: 48000,
       shares_count: 410
@@ -321,7 +321,7 @@ export async function seedMockPredictions(): Promise<void> {
     {
       id: "mock_mrbeast",
       name: "MrBeast 🎁",
-      avatar: "MrBeast",
+      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=MrBeast",
       match1: "France",
       match2: "Argentina",
       champion: "Argentina",
@@ -332,14 +332,211 @@ export async function seedMockPredictions(): Promise<void> {
       created_at: Date.now() - 120000, // 2 mins ago
       share_id: "mock_mrbeast",
       likes_count: 22000,
-      comments_count: 1200,
+      comments_count: 2,
       agrees_count: 18500,
       views_count: 650000,
       shares_count: 5900
     }
   ];
 
+  const mockComments = [
+    {
+      id: "comment_messi_1",
+      predictionId: "mock_messi",
+      text: "France is strong, but Argentina has the magic. Nice prediction Leo!",
+      username: "Shakib Al Hasan 🏏",
+      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Shakib",
+      created_at: Date.now() - 3600000 * 4.5,
+      likes: 120,
+      liked_by: [],
+      reported: false,
+      isPinned: true
+    },
+    {
+      id: "comment_messi_2",
+      predictionId: "mock_messi",
+      text: "Very bold prediction! I think Spain vs France will be the real final.",
+      username: "Pep Guardiola 🧠",
+      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Pep",
+      created_at: Date.now() - 3600000 * 4.2,
+      likes: 95,
+      liked_by: [],
+      reported: false,
+      isPinned: false
+    },
+    {
+      id: "comment_messi_3",
+      predictionId: "mock_messi",
+      text: "@Messi your predictions are always spot-on. Fingers crossed! 🤞",
+      username: "Niloy Hakim 🏆",
+      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Niloy",
+      created_at: Date.now() - 3600000 * 4.0,
+      likes: 35,
+      liked_by: [],
+      reported: false,
+      isPinned: false
+    },
+    {
+      id: "comment_ronaldo_1",
+      predictionId: "mock_ronaldo",
+      text: "France is good, but Spain's midfield is too control-heavy, Cristiano! ⚽",
+      username: "Pep Guardiola 🧠",
+      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Pep",
+      created_at: Date.now() - 3600000 * 3.8,
+      likes: 180,
+      liked_by: [],
+      reported: false,
+      isPinned: true
+    },
+    {
+      id: "comment_ronaldo_2",
+      predictionId: "mock_ronaldo",
+      text: "Ronaldo predicting France to win? Interesting. Let's see who holds the cup! 🏆",
+      username: "Lionel Messi 🐐",
+      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Messi",
+      created_at: Date.now() - 3600000 * 3.5,
+      likes: 210,
+      liked_by: [],
+      reported: false,
+      isPinned: false
+    },
+    {
+      id: "comment_elon_1",
+      predictionId: "mock_elon",
+      text: "3-0 against Argentina? Elon, stick to space travel, you don't know football! 😂",
+      username: "Mark Zuckerberg 👥",
+      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Zuck",
+      created_at: Date.now() - 3600000 * 0.8,
+      likes: 4200,
+      liked_by: [],
+      reported: false,
+      isPinned: true
+    },
+    {
+      id: "comment_elon_2",
+      predictionId: "mock_elon",
+      text: "Grok AI computed this prediction? 💀",
+      username: "Fahim Chowdhury 🇧🇩",
+      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Fahim",
+      created_at: Date.now() - 3600000 * 0.7,
+      likes: 12,
+      liked_by: [],
+      reported: false,
+      isPinned: false
+    },
+    {
+      id: "comment_shakib_1",
+      predictionId: "mock_shakib",
+      text: "আর্জেন্টিনা ২-০ ইংল্যান্ড! অস্থির প্রেডিকশন সাকিব ভাই! 🔥🇧🇩",
+      username: "Niloy Hakim 🏆",
+      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Niloy",
+      created_at: Date.now() - 3600000 * 2.8,
+      likes: 45,
+      liked_by: [],
+      reported: false,
+      isPinned: true
+    },
+    {
+      id: "comment_shakib_2",
+      predictionId: "mock_shakib",
+      text: "England has a solid defence Shakib, won't be that easy for Argentina.",
+      username: "Tamim Iqbal 🏏",
+      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Tamim",
+      created_at: Date.now() - 3600000 * 2.5,
+      likes: 28,
+      liked_by: [],
+      reported: false,
+      isPinned: false
+    },
+    {
+      id: "comment_niloy_1",
+      predictionId: "mock_niloy",
+      text: "শতভাগ একমত ভাই! আর্জেন্টিনা ফাইনাল জিতবেই। ⚽🇦🇷",
+      username: "Fahim Chowdhury 🇧🇩",
+      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Fahim",
+      created_at: Date.now() - 3600000 * 1.5,
+      likes: 4,
+      liked_by: [],
+      reported: false,
+      isPinned: false
+    },
+    {
+      id: "comment_tamim_1",
+      predictionId: "mock_tamim",
+      text: "Nice predictions Tamim. France vs Spain is going to be super tight.",
+      username: "Shakib Al Hasan 🏏",
+      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Shakib",
+      created_at: Date.now() - 3600000 * 0.9,
+      likes: 38,
+      liked_by: [],
+      reported: false,
+      isPinned: true
+    },
+    {
+      id: "comment_tamim_2",
+      predictionId: "mock_tamim",
+      text: "England won't lose to Argentina, my friend. England all the way! 🏴",
+      username: "Gary Lineker 🎙️",
+      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Lineker",
+      created_at: Date.now() - 3600000 * 0.8,
+      likes: 52,
+      liked_by: [],
+      reported: false,
+      isPinned: false
+    },
+    {
+      id: "comment_pep_1",
+      predictionId: "mock_pep",
+      text: "Spain is playing wonderful football under Pep's tactical style.",
+      username: "Mark Zuckerberg 👥",
+      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Zuck",
+      created_at: Date.now() - 1500000,
+      likes: 85,
+      liked_by: [],
+      reported: false,
+      isPinned: false
+    },
+    {
+      id: "comment_zuck_1",
+      predictionId: "mock_zuck",
+      text: "Agreed. Threads will collapse if Argentina wins, everyone will post! 😂",
+      username: "Elon Musk 🚀",
+      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Elon",
+      created_at: Date.now() - 250000,
+      likes: 1200,
+      liked_by: [],
+      reported: false,
+      isPinned: false
+    },
+    {
+      id: "comment_mrbeast_1",
+      predictionId: "mock_mrbeast",
+      text: "If this scores exact, I will personally subscribe to your channel! 😂",
+      username: "Cristiano Ronaldo 👑",
+      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Ronaldo",
+      created_at: Date.now() - 90000,
+      likes: 4500,
+      liked_by: [],
+      reported: false,
+      isPinned: true
+    },
+    {
+      id: "comment_mrbeast_2",
+      predictionId: "mock_mrbeast",
+      text: "MrBeast predicted France to beat Spain? Awesome!",
+      username: "Lionel Messi 🐐",
+      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Messi",
+      created_at: Date.now() - 70000,
+      likes: 2100,
+      liked_by: [],
+      reported: false,
+      isPinned: false
+    }
+  ];
+
   const batch = writeBatch(db);
+  
+  // Seed predictions
   for (const pred of mockPredictions) {
     const docRef = doc(db, PREDICTIONS_COLLECTION, pred.id);
     batch.set(docRef, {
@@ -347,5 +544,12 @@ export async function seedMockPredictions(): Promise<void> {
       score: null
     });
   }
+
+  // Seed comments
+  for (const comment of mockComments) {
+    const docRef = doc(db, "comments", comment.id);
+    batch.set(docRef, comment);
+  }
+
   await batch.commit();
 }
