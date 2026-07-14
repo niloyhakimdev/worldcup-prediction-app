@@ -141,3 +141,211 @@ export async function publishResultsAndCalculateScores(results: AdminResults): P
   // Commit batch update
   await batch.commit();
 }
+
+/**
+ * Seeds the database with mock predictions from famous figures and Bangladeshi fans
+ */
+export async function seedMockPredictions(): Promise<void> {
+  const mockPredictions: Omit<Prediction, "score">[] = [
+    {
+      id: "mock_messi",
+      name: "Lionel Messi 🐐",
+      avatar: "Messi",
+      match1: "Spain",
+      match2: "Argentina",
+      champion: "Argentina",
+      match1ScoreFrance: 1,
+      match1ScoreSpain: 2,
+      match2ScoreEngland: 1,
+      match2ScoreArgentina: 3,
+      created_at: Date.now() - 3600000 * 5, // 5 hours ago
+      share_id: "mock_messi",
+      likes_count: 5200,
+      comments_count: 140,
+      agrees_count: 4800,
+      views_count: 85000,
+      shares_count: 1200
+    },
+    {
+      id: "mock_ronaldo",
+      name: "Cristiano Ronaldo 👑",
+      avatar: "Ronaldo",
+      match1: "France",
+      match2: "Argentina",
+      champion: "France",
+      match1ScoreFrance: 3,
+      match1ScoreSpain: 2,
+      match2ScoreEngland: 0,
+      match2ScoreArgentina: 1,
+      created_at: Date.now() - 3600000 * 4, // 4 hours ago
+      share_id: "mock_ronaldo",
+      likes_count: 4800,
+      comments_count: 210,
+      agrees_count: 3100,
+      views_count: 79000,
+      shares_count: 950
+    },
+    {
+      id: "mock_shakib",
+      name: "Shakib Al Hasan 🏏",
+      avatar: "Shakib",
+      match1: "Spain",
+      match2: "Argentina",
+      champion: "Argentina",
+      match1ScoreFrance: 1,
+      match1ScoreSpain: 2,
+      match2ScoreEngland: 0,
+      match2ScoreArgentina: 2,
+      created_at: Date.now() - 3600000 * 3, // 3 hours ago
+      share_id: "mock_shakib",
+      likes_count: 1200,
+      comments_count: 45,
+      agrees_count: 980,
+      views_count: 15000,
+      shares_count: 180
+    },
+    {
+      id: "mock_niloy",
+      name: "Niloy Hakim 🏆",
+      avatar: "Niloy",
+      match1: "France",
+      match2: "Argentina",
+      champion: "Argentina",
+      match1ScoreFrance: 2,
+      match1ScoreSpain: 1,
+      match2ScoreEngland: 1,
+      match2ScoreArgentina: 2,
+      created_at: Date.now() - 3600000 * 2, // 2 hours ago
+      share_id: "mock_niloy",
+      likes_count: 15,
+      comments_count: 2,
+      agrees_count: 12,
+      views_count: 240,
+      shares_count: 8
+    },
+    {
+      id: "mock_tamim",
+      name: "Tamim Iqbal 🏏",
+      avatar: "Tamim",
+      match1: "Spain",
+      match2: "Argentina",
+      champion: "Argentina",
+      match1ScoreFrance: 1,
+      match1ScoreSpain: 3,
+      match2ScoreEngland: 1,
+      match2ScoreArgentina: 2,
+      created_at: Date.now() - 3600000 * 1, // 1 hour ago
+      share_id: "mock_tamim",
+      likes_count: 650,
+      comments_count: 12,
+      agrees_count: 480,
+      views_count: 6200,
+      shares_count: 44
+    },
+    {
+      id: "mock_pep",
+      name: "Pep Guardiola 🧠",
+      avatar: "Pep",
+      match1: "Spain",
+      match2: "Argentina",
+      champion: "Spain",
+      match1ScoreFrance: 1,
+      match1ScoreSpain: 2,
+      match2ScoreEngland: 1,
+      match2ScoreArgentina: 2,
+      created_at: Date.now() - 1800000, // 30 mins ago
+      share_id: "mock_pep",
+      likes_count: 1800,
+      comments_count: 68,
+      agrees_count: 1400,
+      views_count: 24000,
+      shares_count: 320
+    },
+    {
+      id: "mock_elon",
+      name: "Elon Musk 🚀",
+      avatar: "Elon",
+      match1: "France",
+      match2: "England",
+      champion: "England",
+      match1ScoreFrance: 4,
+      match1ScoreSpain: 3,
+      match2ScoreEngland: 3,
+      match2ScoreArgentina: 0,
+      created_at: Date.now() - 900000, // 15 mins ago
+      share_id: "mock_elon",
+      likes_count: 14500,
+      comments_count: 890,
+      agrees_count: 8500,
+      views_count: 350000,
+      shares_count: 2800
+    },
+    {
+      id: "mock_fahim",
+      name: "Fahim Chowdhury 🇧🇩",
+      avatar: "Fahim",
+      match1: "Spain",
+      match2: "Argentina",
+      champion: "Argentina",
+      match1ScoreFrance: 0,
+      match1ScoreSpain: 2,
+      match2ScoreEngland: 1,
+      match2ScoreArgentina: 3,
+      created_at: Date.now() - 600000, // 10 mins ago
+      share_id: "mock_fahim",
+      likes_count: 32,
+      comments_count: 3,
+      agrees_count: 24,
+      views_count: 450,
+      shares_count: 12
+    },
+    {
+      id: "mock_zuck",
+      name: "Mark Zuckerberg 👥",
+      avatar: "Zuck",
+      match1: "Spain",
+      match2: "Argentina",
+      champion: "Argentina",
+      match1ScoreFrance: 1,
+      match1ScoreSpain: 2,
+      match2ScoreEngland: 1,
+      match2ScoreArgentina: 2,
+      created_at: Date.now() - 300000, // 5 mins ago
+      share_id: "mock_zuck",
+      likes_count: 3400,
+      comments_count: 180,
+      agrees_count: 2900,
+      views_count: 48000,
+      shares_count: 410
+    },
+    {
+      id: "mock_mrbeast",
+      name: "MrBeast 🎁",
+      avatar: "MrBeast",
+      match1: "France",
+      match2: "Argentina",
+      champion: "Argentina",
+      match1ScoreFrance: 3,
+      match1ScoreSpain: 1,
+      match2ScoreEngland: 2,
+      match2ScoreArgentina: 4,
+      created_at: Date.now() - 120000, // 2 mins ago
+      share_id: "mock_mrbeast",
+      likes_count: 22000,
+      comments_count: 1200,
+      agrees_count: 18500,
+      views_count: 650000,
+      shares_count: 5900
+    }
+  ];
+
+  const batch = writeBatch(db);
+  for (const pred of mockPredictions) {
+    const docRef = doc(db, PREDICTIONS_COLLECTION, pred.id);
+    batch.set(docRef, {
+      ...pred,
+      score: null
+    });
+  }
+  await batch.commit();
+}

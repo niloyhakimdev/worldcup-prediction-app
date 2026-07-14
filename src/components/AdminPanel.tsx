@@ -11,7 +11,7 @@ import {
   CheckCircle2
 } from "lucide-react";
 import { AdminResults, Team } from "../types";
-import { getResults, publishResultsAndCalculateScores } from "../lib/db";
+import { getResults, publishResultsAndCalculateScores, seedMockPredictions } from "../lib/db";
 
 interface AdminPanelProps {
   onResultsUpdated: (newResults: AdminResults) => void;
@@ -33,6 +33,7 @@ export default function AdminPanel({ onResultsUpdated, onClose }: AdminPanelProp
   const [champion, setChampion] = useState<Team | "">("");
   const [published, setPublished] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
+  const [isSeeding, setIsSeeding] = useState(false);
   const [message, setMessage] = useState<{ text: string; type: "success" | "error" } | null>(null);
   const [authError, setAuthError] = useState("");
 
@@ -208,6 +209,26 @@ export default function AdminPanel({ onResultsUpdated, onClose }: AdminPanelProp
       });
     } finally {
       setIsSaving(false);
+    }
+  };
+
+  const handleSeedMockData = async () => {
+    setIsSeeding(true);
+    setMessage(null);
+    try {
+      await seedMockPredictions();
+      setMessage({
+        text: "🚀 Famous figures and Bangladeshi fan mock predictions successfully seeded!",
+        type: "success"
+      });
+    } catch (err) {
+      console.error(err);
+      setMessage({
+        text: "Failed to seed mock predictions. Check your connection.",
+        type: "error"
+      });
+    } finally {
+      setIsSeeding(false);
     }
   };
 
@@ -487,6 +508,21 @@ export default function AdminPanel({ onResultsUpdated, onClose }: AdminPanelProp
               <>
                 <CheckCircle2 className="w-4 h-4" />
                 <span>Publish & Score Standings</span>
+              </>
+            )}
+          </button>
+
+          <button
+            type="button"
+            onClick={handleSeedMockData}
+            disabled={isSaving || isSeeding}
+            className="w-full bg-blue-500/15 border border-blue-500/30 text-blue-400 font-black py-3 rounded-2xl text-xs tracking-wider uppercase flex items-center justify-center gap-2 hover:bg-blue-500/25 disabled:opacity-50 cursor-pointer transition-all active:scale-[0.99]"
+          >
+            {isSeeding ? (
+              <span className="w-4 h-4 border-2 border-blue-400 border-t-transparent rounded-full animate-spin" />
+            ) : (
+              <>
+                <span>🚀 Seed Famous & Fan Mock Predictions</span>
               </>
             )}
           </button>
