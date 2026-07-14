@@ -42,10 +42,10 @@ interface DiscussionViewProps {
 }
 
 const TEAMS: Record<string, { name: string; flag: string }> = {
-  France: { name: "France", flag: "/flags/france.svg" },
-  Spain: { name: "Spain", flag: "/flags/spain.svg" },
-  England: { name: "England", flag: "/flags/england.svg" },
-  Argentina: { name: "Argentina", flag: "/flags/argentina.svg" },
+  France: { name: "France", flag: "https://flagcdn.com/w40/fr.png" },
+  Spain: { name: "Spain", flag: "https://flagcdn.com/w40/es.png" },
+  England: { name: "England", flag: "https://flagcdn.com/w40/gb-eng.png" },
+  Argentina: { name: "Argentina", flag: "https://flagcdn.com/w40/ar.png" },
 };
 
 // Available premium reaction emojis/types
@@ -491,7 +491,7 @@ export default function DiscussionView({
           {/* Match 1 details */}
           <div className="flex items-center justify-between text-xs bg-black/40 p-3 rounded-2xl border border-white/5">
             <div className="flex items-center gap-2 w-5/12">
-              <img src="/flags/france.svg" alt="" referrerPolicy="no-referrer" className="w-5 h-5 rounded-full border border-white/10 shadow-sm" />
+              <img src="https://flagcdn.com/w40/fr.png" alt="" referrerPolicy="no-referrer" className="w-5 h-5 rounded-full border border-white/10 shadow-sm" />
               <span className="font-extrabold text-white">France</span>
             </div>
             <div className="flex items-center gap-1.5 justify-center w-2/12 font-mono font-black text-base text-amber-400">
@@ -501,14 +501,14 @@ export default function DiscussionView({
             </div>
             <div className="flex items-center gap-2 justify-end w-5/12 text-right">
               <span className="font-extrabold text-white">Spain</span>
-              <img src="/flags/spain.svg" alt="" referrerPolicy="no-referrer" className="w-5 h-5 rounded-full border border-white/10 shadow-sm" />
+              <img src="https://flagcdn.com/w40/es.png" alt="" referrerPolicy="no-referrer" className="w-5 h-5 rounded-full border border-white/10 shadow-sm" />
             </div>
           </div>
 
           {/* Match 2 details */}
           <div className="flex items-center justify-between text-xs bg-black/40 p-3 rounded-2xl border border-white/5">
             <div className="flex items-center gap-2 w-5/12">
-              <img src="/flags/england.svg" alt="" referrerPolicy="no-referrer" className="w-5 h-5 rounded-full border border-white/10 shadow-sm" />
+              <img src="https://flagcdn.com/w40/gb-eng.png" alt="" referrerPolicy="no-referrer" className="w-5 h-5 rounded-full border border-white/10 shadow-sm" />
               <span className="font-extrabold text-white">England</span>
             </div>
             <div className="flex items-center gap-1.5 justify-center w-2/12 font-mono font-black text-base text-amber-400">
@@ -518,7 +518,7 @@ export default function DiscussionView({
             </div>
             <div className="flex items-center gap-2 justify-end w-5/12 text-right">
               <span className="font-extrabold text-white">Argentina</span>
-              <img src="/flags/argentina.svg" alt="" referrerPolicy="no-referrer" className="w-5 h-5 rounded-full border border-white/10 shadow-sm" />
+              <img src="https://flagcdn.com/w40/ar.png" alt="" referrerPolicy="no-referrer" className="w-5 h-5 rounded-full border border-white/10 shadow-sm" />
             </div>
           </div>
 

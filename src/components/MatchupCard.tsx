@@ -9,10 +9,10 @@ interface TeamDetail {
 }
 
 const TEAMS: Record<string, TeamDetail> = {
-  France: { name: "France", flag: "/flags/france.svg", color: "from-blue-600/20 to-blue-900/40", secondary: "text-blue-400" },
-  Spain: { name: "Spain", flag: "/flags/spain.svg", color: "from-red-600/20 to-yellow-600/30", secondary: "text-red-400" },
-  England: { name: "England", flag: "/flags/england.svg", color: "from-slate-100/10 to-slate-400/20", secondary: "text-slate-300" },
-  Argentina: { name: "Argentina", flag: "/flags/argentina.svg", color: "from-sky-400/20 to-blue-500/25", secondary: "text-sky-300" },
+  France: { name: "France", flag: "https://flagcdn.com/w40/fr.png", color: "from-blue-600/20 to-blue-900/40", secondary: "text-blue-400" },
+  Spain: { name: "Spain", flag: "https://flagcdn.com/w40/es.png", color: "from-red-600/20 to-yellow-600/30", secondary: "text-red-400" },
+  England: { name: "England", flag: "https://flagcdn.com/w40/gb-eng.png", color: "from-slate-100/10 to-slate-400/20", secondary: "text-slate-300" },
+  Argentina: { name: "Argentina", flag: "https://flagcdn.com/w40/ar.png", color: "from-sky-400/20 to-blue-500/25", secondary: "text-sky-300" },
 };
 
 interface MatchupCardProps {

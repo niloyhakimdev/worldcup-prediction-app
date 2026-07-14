@@ -11,10 +11,10 @@ interface TrendingCarouselProps {
 }
 
 const TEAMS: Record<string, { name: string; flag: string }> = {
-  France: { name: "France", flag: "/flags/france.svg" },
-  Spain: { name: "Spain", flag: "/flags/spain.svg" },
-  England: { name: "England", flag: "/flags/england.svg" },
-  Argentina: { name: "Argentina", flag: "/flags/argentina.svg" },
+  France: { name: "France", flag: "https://flagcdn.com/w40/fr.png" },
+  Spain: { name: "Spain", flag: "https://flagcdn.com/w40/es.png" },
+  England: { name: "England", flag: "https://flagcdn.com/w40/gb-eng.png" },
+  Argentina: { name: "Argentina", flag: "https://flagcdn.com/w40/ar.png" },
 };
 
 export default function TrendingCarousel({ predictions, onSelectPrediction }: TrendingCarouselProps) {
@@ -131,7 +131,7 @@ export default function TrendingCarousel({ predictions, onSelectPrediction }: Tr
                 {/* France vs Spain */}
                 <div className="flex items-center justify-between gap-1.5 border-r border-white/5 pr-2.5">
                   <div className="flex items-center gap-1.5 min-w-0">
-                    <img src="/flags/france.svg" alt="" className="w-3.5 h-3.5 rounded-full" />
+                    <img src="https://flagcdn.com/w40/fr.png" alt="" className="w-3.5 h-3.5 rounded-full" />
                     <span className="font-bold text-gray-400 truncate">FRA</span>
                   </div>
                   <span className="font-mono font-black text-white bg-black/35 px-1.5 py-0.5 rounded border border-white/5">
@@ -139,14 +139,14 @@ export default function TrendingCarousel({ predictions, onSelectPrediction }: Tr
                   </span>
                   <div className="flex items-center gap-1.5 min-w-0">
                     <span className="font-bold text-gray-400 truncate">ESP</span>
-                    <img src="/flags/spain.svg" alt="" className="w-3.5 h-3.5 rounded-full" />
+                    <img src="https://flagcdn.com/w40/es.png" alt="" className="w-3.5 h-3.5 rounded-full" />
                   </div>
                 </div>
 
                 {/* England vs Argentina */}
                 <div className="flex items-center justify-between gap-1.5 pl-2.5">
                   <div className="flex items-center gap-1.5 min-w-0">
-                    <img src="/flags/england.svg" alt="" className="w-3.5 h-3.5 rounded-full" />
+                    <img src="https://flagcdn.com/w40/gb-eng.png" alt="" className="w-3.5 h-3.5 rounded-full" />
                     <span className="font-bold text-gray-400 truncate">ENG</span>
                   </div>
                   <span className="font-mono font-black text-white bg-black/35 px-1.5 py-0.5 rounded border border-white/5">
@@ -154,7 +154,7 @@ export default function TrendingCarousel({ predictions, onSelectPrediction }: Tr
                   </span>
                   <div className="flex items-center gap-1.5 min-w-0">
                     <span className="font-bold text-gray-400 truncate">ARG</span>
-                    <img src="/flags/argentina.svg" alt="" className="w-3.5 h-3.5 rounded-full" />
+                    <img src="https://flagcdn.com/w40/ar.png" alt="" className="w-3.5 h-3.5 rounded-full" />
                   </div>
                 </div>
               </div>

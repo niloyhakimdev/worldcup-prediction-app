@@ -12,10 +12,10 @@ interface PredictionFormProps {
 }
 
 const TEAMS: Record<string, { name: string; code: string; flag: string }> = {
-  France: { name: "France", code: "FRA", flag: "/flags/france.svg" },
-  Spain: { name: "Spain", code: "ESP", flag: "/flags/spain.svg" },
-  England: { name: "England", code: "ENG", flag: "/flags/england.svg" },
-  Argentina: { name: "Argentina", code: "ARG", flag: "/flags/argentina.svg" },
+  France: { name: "France", code: "FRA", flag: "https://flagcdn.com/w40/fr.png" },
+  Spain: { name: "Spain", code: "ESP", flag: "https://flagcdn.com/w40/es.png" },
+  England: { name: "England", code: "ENG", flag: "https://flagcdn.com/w40/gb-eng.png" },
+  Argentina: { name: "Argentina", code: "ARG", flag: "https://flagcdn.com/w40/ar.png" },
 };
 
 export default function PredictionForm({ onSuccess, onCancel, existingPredictionId }: PredictionFormProps) {
@@ -278,7 +278,7 @@ export default function PredictionForm({ onSuccess, onCancel, existingPrediction
             </div>
             <div className="grid grid-cols-7 gap-1 items-center">
               <div className="col-span-3 flex items-center gap-2">
-                <img src="/flags/france.svg" alt="France" referrerPolicy="no-referrer" className="w-6 h-6 rounded-full border border-white/20 shadow shrink-0" />
+                <img src="https://flagcdn.com/w40/fr.png" alt="France" referrerPolicy="no-referrer" className="w-6 h-6 rounded-full border border-white/20 shadow shrink-0" />
                 <span className="text-xs font-bold text-white truncate">FRA</span>
               </div>
               <div className="col-span-1 flex justify-center">
@@ -304,7 +304,7 @@ export default function PredictionForm({ onSuccess, onCancel, existingPrediction
               </div>
               <div className="col-span-1 flex items-center justify-end gap-2">
                 <span className="text-xs font-bold text-white truncate text-right">ESP</span>
-                <img src="/flags/spain.svg" alt="Spain" referrerPolicy="no-referrer" className="w-6 h-6 rounded-full border border-white/20 shadow shrink-0" />
+                <img src="https://flagcdn.com/w40/es.png" alt="Spain" referrerPolicy="no-referrer" className="w-6 h-6 rounded-full border border-white/20 shadow shrink-0" />
               </div>
             </div>
           </div>
@@ -357,7 +357,7 @@ export default function PredictionForm({ onSuccess, onCancel, existingPrediction
             </div>
             <div className="grid grid-cols-7 gap-1 items-center">
               <div className="col-span-3 flex items-center gap-2">
-                <img src="/flags/england.svg" alt="England" referrerPolicy="no-referrer" className="w-6 h-6 rounded-full border border-white/20 shadow shrink-0" />
+                <img src="https://flagcdn.com/w40/gb-eng.png" alt="England" referrerPolicy="no-referrer" className="w-6 h-6 rounded-full border border-white/20 shadow shrink-0" />
                 <span className="text-xs font-bold text-white truncate">ENG</span>
               </div>
               <div className="col-span-1 flex justify-center">
@@ -383,7 +383,7 @@ export default function PredictionForm({ onSuccess, onCancel, existingPrediction
               </div>
               <div className="col-span-1 flex items-center justify-end gap-2">
                 <span className="text-xs font-bold text-white truncate text-right">ARG</span>
-                <img src="/flags/argentina.svg" alt="Argentina" referrerPolicy="no-referrer" className="w-6 h-6 rounded-full border border-white/20 shadow shrink-0" />
+                <img src="https://flagcdn.com/w40/ar.png" alt="Argentina" referrerPolicy="no-referrer" className="w-6 h-6 rounded-full border border-white/20 shadow shrink-0" />
               </div>
             </div>
           </div>

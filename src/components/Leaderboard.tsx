@@ -19,10 +19,10 @@ interface LeaderboardProps {
 }
 
 const TEAMS: Record<string, { name: string; flag: string }> = {
-  France: { name: "France", flag: "/flags/france.svg" },
-  Spain: { name: "Spain", flag: "/flags/spain.svg" },
-  England: { name: "England", flag: "/flags/england.svg" },
-  Argentina: { name: "Argentina", flag: "/flags/argentina.svg" },
+  France: { name: "France", flag: "https://flagcdn.com/w40/fr.png" },
+  Spain: { name: "Spain", flag: "https://flagcdn.com/w40/es.png" },
+  England: { name: "England", flag: "https://flagcdn.com/w40/gb-eng.png" },
+  Argentina: { name: "Argentina", flag: "https://flagcdn.com/w40/ar.png" },
 };
 
 export default function Leaderboard({ onViewPrediction, results }: LeaderboardProps) {

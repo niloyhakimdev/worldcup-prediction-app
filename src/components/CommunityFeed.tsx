@@ -22,10 +22,10 @@ interface CommunityFeedProps {
 }
 
 const TEAMS: Record<string, { name: string; flag: string }> = {
-  France: { name: "France", flag: "/flags/france.svg" },
-  Spain: { name: "Spain", flag: "/flags/spain.svg" },
-  England: { name: "England", flag: "/flags/england.svg" },
-  Argentina: { name: "Argentina", flag: "/flags/argentina.svg" },
+  France: { name: "France", flag: "https://flagcdn.com/w40/fr.png" },
+  Spain: { name: "Spain", flag: "https://flagcdn.com/w40/es.png" },
+  England: { name: "England", flag: "https://flagcdn.com/w40/gb-eng.png" },
+  Argentina: { name: "Argentina", flag: "https://flagcdn.com/w40/ar.png" },
 };
 
 export default function CommunityFeed({ onSelectPrediction, myPredictionId }: CommunityFeedProps) {
@@ -220,7 +220,7 @@ export default function CommunityFeed({ onSelectPrediction, myPredictionId }: Co
                     {/* France vs Spain */}
                     <div className="flex items-center justify-between gap-2 border-r border-white/5 pr-3">
                       <div className="flex items-center gap-1.5 min-w-0">
-                        <img src="/flags/france.svg" alt="" referrerPolicy="no-referrer" className="w-4 h-4 rounded-full border border-white/10 shrink-0" />
+                        <img src="https://flagcdn.com/w40/fr.png" alt="" referrerPolicy="no-referrer" className="w-4 h-4 rounded-full border border-white/10 shrink-0" />
                         <span className="text-[10px] font-bold text-gray-400 uppercase truncate">FRA</span>
                       </div>
                       <span className="font-mono font-black text-white">
@@ -228,14 +228,14 @@ export default function CommunityFeed({ onSelectPrediction, myPredictionId }: Co
                       </span>
                       <div className="flex items-center gap-1.5 min-w-0">
                         <span className="text-[10px] font-bold text-gray-400 uppercase truncate">ESP</span>
-                        <img src="/flags/spain.svg" alt="" referrerPolicy="no-referrer" className="w-4 h-4 rounded-full border border-white/10 shrink-0" />
+                        <img src="https://flagcdn.com/w40/es.png" alt="" referrerPolicy="no-referrer" className="w-4 h-4 rounded-full border border-white/10 shrink-0" />
                       </div>
                     </div>
 
                     {/* England vs Argentina */}
                     <div className="flex items-center justify-between gap-2 pl-3">
                       <div className="flex items-center gap-1.5 min-w-0">
-                        <img src="/flags/england.svg" alt="" referrerPolicy="no-referrer" className="w-4 h-4 rounded-full border border-white/10 shrink-0" />
+                        <img src="https://flagcdn.com/w40/gb-eng.png" alt="" referrerPolicy="no-referrer" className="w-4 h-4 rounded-full border border-white/10 shrink-0" />
                         <span className="text-[10px] font-bold text-gray-400 uppercase truncate">ENG</span>
                       </div>
                       <span className="font-mono font-black text-white">
@@ -243,7 +243,7 @@ export default function CommunityFeed({ onSelectPrediction, myPredictionId }: Co
                       </span>
                       <div className="flex items-center gap-1.5 min-w-0">
                         <span className="text-[10px] font-bold text-gray-400 uppercase truncate">ARG</span>
-                        <img src="/flags/argentina.svg" alt="" referrerPolicy="no-referrer" className="w-4 h-4 rounded-full border border-white/10 shrink-0" />
+                        <img src="https://flagcdn.com/w40/ar.png" alt="" referrerPolicy="no-referrer" className="w-4 h-4 rounded-full border border-white/10 shrink-0" />
                       </div>
                     </div>
                   </div>

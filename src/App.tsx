@@ -43,10 +43,10 @@ import TrendingCarousel from "./components/TrendingCarousel";
 const PREDICTION_CLOSING_TIME = "2026-07-15T18:30:00Z";
 
 const TEAMS: Record<string, { name: string; code: string; flag: string; emoji: string }> = {
-  France: { name: "France", code: "FRA", flag: "/flags/france.svg", emoji: "🇫🇷" },
-  Spain: { name: "Spain", code: "ESP", flag: "/flags/spain.svg", emoji: "🇪🇸" },
-  England: { name: "England", code: "ENG", flag: "/flags/england.svg", emoji: "🏴" },
-  Argentina: { name: "Argentina", code: "ARG", flag: "/flags/argentina.svg", emoji: "🇦🇷" },
+  France: { name: "France", code: "FRA", flag: "https://flagcdn.com/w40/fr.png", emoji: "🇫🇷" },
+  Spain: { name: "Spain", code: "ESP", flag: "https://flagcdn.com/w40/es.png", emoji: "🇪🇸" },
+  England: { name: "England", code: "ENG", flag: "https://flagcdn.com/w40/gb-eng.png", emoji: "🏴" },
+  Argentina: { name: "Argentina", code: "ARG", flag: "https://flagcdn.com/w40/ar.png", emoji: "🇦🇷" },
 };
 
 function timeAgo(timestamp: number): string {
@@ -396,7 +396,7 @@ export default function App() {
                     {/* Match 1 predicted */}
                     <div className="flex items-center justify-between text-xs bg-white/5 p-2 rounded-xl border border-white/5">
                       <div className="flex items-center gap-1.5 w-5/12">
-                        <img src="/flags/france.svg" alt="" referrerPolicy="no-referrer" className="w-4.5 h-4.5 rounded-full border border-white/10" />
+                        <img src="https://flagcdn.com/w40/fr.png" alt="" referrerPolicy="no-referrer" className="w-4.5 h-4.5 rounded-full border border-white/10" />
                         <span className="font-bold text-gray-300">France</span>
                       </div>
                       <div className="flex items-center gap-1.5 justify-center w-2/12 font-mono font-black text-white bg-black/40 px-2 py-0.5 rounded border border-white/5">
@@ -406,14 +406,14 @@ export default function App() {
                       </div>
                       <div className="flex items-center gap-1.5 justify-end w-5/12 text-right">
                         <span className="font-bold text-gray-300">Spain</span>
-                        <img src="/flags/spain.svg" alt="" referrerPolicy="no-referrer" className="w-4.5 h-4.5 rounded-full border border-white/10" />
+                        <img src="https://flagcdn.com/w40/es.png" alt="" referrerPolicy="no-referrer" className="w-4.5 h-4.5 rounded-full border border-white/10" />
                       </div>
                     </div>
 
                     {/* Match 2 predicted */}
                     <div className="flex items-center justify-between text-xs bg-white/5 p-2 rounded-xl border border-white/5">
                       <div className="flex items-center gap-1.5 w-5/12">
-                        <img src="/flags/england.svg" alt="" referrerPolicy="no-referrer" className="w-4.5 h-4.5 rounded-full border border-white/10" />
+                        <img src="https://flagcdn.com/w40/gb-eng.png" alt="" referrerPolicy="no-referrer" className="w-4.5 h-4.5 rounded-full border border-white/10" />
                         <span className="font-bold text-gray-300">England</span>
                       </div>
                       <div className="flex items-center gap-1.5 justify-center w-2/12 font-mono font-black text-white bg-black/40 px-2 py-0.5 rounded border border-white/5">
@@ -423,7 +423,7 @@ export default function App() {
                       </div>
                       <div className="flex items-center gap-1.5 justify-end w-5/12 text-right">
                         <span className="font-bold text-gray-300">Argentina</span>
-                        <img src="/flags/argentina.svg" alt="" referrerPolicy="no-referrer" className="w-4.5 h-4.5 rounded-full border border-white/10" />
+                        <img src="https://flagcdn.com/w40/ar.png" alt="" referrerPolicy="no-referrer" className="w-4.5 h-4.5 rounded-full border border-white/10" />
                       </div>
                     </div>
 
