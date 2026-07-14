@@ -448,7 +448,7 @@ export default function DiscussionView({
       </div>
 
       {/* Main Prediction Details Card */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-[2rem] p-5 shadow-2xl backdrop-blur-xl">
+      <div className="relative overflow-hidden bg-zinc-900 border border-white/10 rounded-[2rem] p-5 shadow-2xl">
         
         {/* Glowing effect if Perfect Prediction */}
         {isPerfectPrediction && (
@@ -558,7 +558,7 @@ export default function DiscussionView({
       </div>
 
       {/* REACTIONS SELECTOR PANEL */}
-      <div className="bg-white/5 border border-white/10 rounded-3xl p-4 space-y-3 backdrop-blur-xl">
+      <div className="bg-zinc-900 border border-white/10 rounded-3xl p-4 space-y-3 shadow-lg">
         <h4 className="text-[10px] font-black uppercase tracking-widest text-amber-400 border-b border-white/5 pb-2">
           React to prediction
         </h4>
@@ -606,7 +606,7 @@ export default function DiscussionView({
       </AnimatePresence>
 
       {/* DISCUSSION / COMMENTS LIST & ADD COMMENT SECTION */}
-      <div className="space-y-4 bg-white/5 border border-white/10 rounded-3xl p-5 backdrop-blur-xl">
+      <div className="space-y-4 bg-zinc-900 border border-white/10 rounded-3xl p-5 shadow-lg">
         
         {/* Comments Section Header */}
         <div className="flex items-center justify-between border-b border-white/5 pb-3">
