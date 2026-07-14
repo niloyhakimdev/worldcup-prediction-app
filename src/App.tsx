@@ -315,6 +315,38 @@ export default function App() {
               exit={{ opacity: 0, y: -10 }}
               className="space-y-6"
             >
+              {/* Hanging Banner / Announcement */}
+              <motion.div 
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, type: "spring", stiffness: 100 }}
+                className="relative overflow-hidden bg-gradient-to-r from-amber-500/20 via-yellow-500/10 to-amber-500/20 border border-amber-400/30 rounded-3xl p-4 shadow-lg shadow-amber-500/10 backdrop-blur-md"
+              >
+                {/* Decorative background lights */}
+                <div className="absolute top-0 right-0 w-24 h-24 bg-amber-400/10 blur-xl pointer-events-none" />
+                <div className="absolute bottom-0 left-0 w-24 h-24 bg-yellow-400/5 blur-xl pointer-events-none" />
+                
+                {/* Content */}
+                <div className="flex items-center gap-3.5 relative z-10">
+                  <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-amber-400 to-yellow-500 flex items-center justify-center text-black font-extrabold shadow-md shadow-amber-400/20 shrink-0 animate-bounce">
+                    <span className="text-lg">🎁</span>
+                  </div>
+                  <div className="space-y-0.5">
+                    <div className="flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+                      <span className="text-[9px] font-black tracking-widest text-amber-400 uppercase">ধামাকা অফার!</span>
+                    </div>
+                    <h4 className="text-sm font-black text-white leading-snug">
+                      সঠিক প্রেডিকশন করলেই বিজয়ী পাবেন <span className="text-amber-400 underline decoration-amber-400/50 underline-offset-2">৫০ টাকা</span> পুরস্কার! 💸
+                    </h4>
+                  </div>
+                </div>
+
+                {/* Hanging ribbons effect styling */}
+                <div className="absolute top-0 left-8 w-[2px] h-2.5 bg-white/20" />
+                <div className="absolute top-0 right-8 w-[2px] h-2.5 bg-white/20" />
+              </motion.div>
+
               {/* Cinematic Premium Hero */}
               <PremiumHero 
                 onPredictClick={() => setView("predict")} 
