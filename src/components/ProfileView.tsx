@@ -178,7 +178,7 @@ export default function ProfileView({ onBack, myPredictionId, results }: Profile
       </div>
 
       {/* Profile Info Header */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-white/10 to-white/5 border border-white/10 rounded-[2.5rem] p-6 text-center backdrop-blur-xl shadow-2xl">
+      <div className="relative bg-zinc-900 border border-white/10 rounded-3xl p-6 text-center shadow-md">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-amber-500/5 rounded-full blur-[80px] pointer-events-none" />
 
         <div className="flex flex-col items-center space-y-4">
@@ -276,7 +276,7 @@ export default function ProfileView({ onBack, myPredictionId, results }: Profile
       </div>
 
       {/* ACHIEVEMENTS BADGES PANEL */}
-      <div className="bg-white/5 border border-white/10 rounded-[2.5rem] p-5 space-y-4.5 backdrop-blur-xl">
+      <div className="bg-zinc-900 border border-white/10 rounded-3xl p-5 space-y-4.5 shadow-md">
         <div className="flex items-center gap-2 border-b border-white/5 pb-3">
           <Award className="w-4.5 h-4.5 text-amber-400" />
           <h4 className="text-xs font-black uppercase tracking-widest text-white">
