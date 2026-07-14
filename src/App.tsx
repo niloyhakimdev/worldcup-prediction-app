@@ -305,24 +305,12 @@ export default function App() {
         </AnimatePresence>
 
         {/* View Router */}
-        <AnimatePresence mode="wait">
           
           {/* HOME VIEW */}
           {view === "home" && (
-            <motion.div
-              key="home"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              className="space-y-6"
-            >
+            <div className="space-y-6">
               {/* Hanging Banner / Announcement */}
-              <motion.div 
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, type: "spring", stiffness: 100 }}
-                className="relative overflow-hidden bg-gradient-to-r from-amber-500/20 via-yellow-500/10 to-amber-500/20 border border-amber-400/30 rounded-3xl p-4 shadow-lg shadow-amber-500/10 backdrop-blur-md"
-              >
+              <div className="relative overflow-hidden bg-gradient-to-r from-amber-500/20 via-yellow-500/10 to-amber-500/20 border border-amber-400/30 rounded-3xl p-4 shadow-lg shadow-amber-500/10 backdrop-blur-md">
                 {/* Decorative background lights */}
                 <div className="absolute top-0 right-0 w-24 h-24 bg-amber-400/10 blur-xl pointer-events-none" />
                 <div className="absolute bottom-0 left-0 w-24 h-24 bg-yellow-400/5 blur-xl pointer-events-none" />
@@ -346,7 +334,7 @@ export default function App() {
                 {/* Hanging ribbons effect styling */}
                 <div className="absolute top-0 left-8 w-[2px] h-2.5 bg-white/20" />
                 <div className="absolute top-0 right-8 w-[2px] h-2.5 bg-white/20" />
-              </motion.div>
+              </div>
 
               {/* Cinematic Premium Hero */}
               <PremiumHero 
@@ -549,17 +537,12 @@ export default function App() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           )}
 
           {/* COMMUNITY FEED VIEW */}
           {view === "feed" && (
-            <motion.div
-              key="feed"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-            >
+            <div className="space-y-6">
               <CommunityFeed 
                 onSelectPrediction={(pred) => {
                   setSelectedPrediction(pred);
@@ -567,17 +550,12 @@ export default function App() {
                 }}
                 myPredictionId={myPredictionId}
               />
-            </motion.div>
+            </div>
           )}
 
           {/* STANDINGS/LEADERBOARD VIEW */}
           {view === "leaderboard" && (
-            <motion.div
-              key="leaderboard"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-            >
+            <div className="space-y-6">
               <Leaderboard 
                 onViewPrediction={(id) => {
                   getPredictionById(id).then((pred) => {
@@ -589,33 +567,23 @@ export default function App() {
                 }}
                 results={results}
               />
-            </motion.div>
+            </div>
           )}
 
           {/* PROFILE VIEW */}
           {view === "profile" && (
-            <motion.div
-              key="profile"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-            >
+            <div className="space-y-6">
               <ProfileView 
                 onBack={() => setView("home")}
                 myPredictionId={myPredictionId}
                 results={results}
               />
-            </motion.div>
+            </div>
           )}
 
           {/* DETAILED DISCUSSION BOARD VIEW */}
           {view === "discussion" && selectedPrediction && (
-            <motion.div
-              key="discussion"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-            >
+            <div className="space-y-6">
               <DiscussionView 
                 prediction={selectedPrediction}
                 onBack={() => {
@@ -629,41 +597,30 @@ export default function App() {
                 myPredictionId={myPredictionId}
                 results={results}
               />
-            </motion.div>
+            </div>
           )}
 
           {/* PREDICTION FORM VIEW */}
           {view === "predict" && (
-            <motion.div
-              key="predict"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-            >
+            <div className="space-y-6">
               <PredictionForm
                 onSuccess={handlePredictionSuccess}
                 onCancel={() => setView("home")}
                 existingPredictionId={myPredictionId || undefined}
               />
-            </motion.div>
+            </div>
           )}
 
-          {/* ADMIN PANEL VIEW */}
           {view === "admin" && (
-            <motion.div
-              key="admin"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-            >
+            <div className="space-y-6">
               <AdminPanel
                 onResultsUpdated={handleResultsUpdated}
                 onClose={() => setView("home")}
               />
-            </motion.div>
+            </div>
           )}
 
-        </AnimatePresence>
+        
 
         {/* BOTTOM NAVIGATION BAR */}
         <nav className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md bg-black/90 border-t border-white/10 px-6 py-3 flex items-center justify-between backdrop-blur-lg z-50 rounded-t-[1.5rem] shadow-[0_-10px_25px_rgba(0,0,0,0.5)]">

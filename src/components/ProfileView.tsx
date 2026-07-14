@@ -199,14 +199,9 @@ export default function ProfileView({ onBack, myPredictionId, results }: Profile
 
           {/* User Name & Edit controls */}
           <div className="space-y-1 w-full max-w-xs">
-            <AnimatePresence mode="wait">
+                        <div className="w-full">
               {isEditing ? (
-                <motion.div 
-                  initial={{ opacity: 0, y: -5 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 5 }}
-                  className="flex items-center gap-2"
-                >
+                <div className="flex items-center gap-2">
                   <input
                     type="text"
                     value={usernameInput}
@@ -221,14 +216,9 @@ export default function ProfileView({ onBack, myPredictionId, results }: Profile
                   >
                     Save
                   </button>
-                </motion.div>
+                </div>
               ) : (
-                <motion.div 
-                  initial={{ opacity: 0, y: 5 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -5 }}
-                  className="flex items-center justify-center gap-1.5"
-                >
+                <div className="flex items-center justify-center gap-1.5">
                   <h3 className="text-lg font-black tracking-wide text-white">{localUser.username}</h3>
                   <button 
                     onClick={() => setIsEditing(true)}
@@ -236,9 +226,9 @@ export default function ProfileView({ onBack, myPredictionId, results }: Profile
                   >
                     <Edit3 className="w-3.5 h-3.5" />
                   </button>
-                </motion.div>
+                </div>
               )}
-            </AnimatePresence>
+            </div>
 
             <span className="text-[9px] text-gray-400 font-bold uppercase tracking-wider flex items-center justify-center gap-1">
               <Clock className="w-3 h-3 text-amber-400/80" />
