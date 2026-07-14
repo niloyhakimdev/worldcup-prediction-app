@@ -117,7 +117,7 @@ export default function PremiumHero({
 
           <button
             onClick={onViewLeaderboardClick}
-            className="flex-1 py-4 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-black text-xs tracking-widest uppercase rounded-2xl flex items-center justify-center gap-2 transition-all hover:scale-[1.02] active:scale-[0.98] duration-200 backdrop-blur-md cursor-pointer"
+            className="flex-1 py-4 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-black text-xs tracking-widest uppercase rounded-2xl flex items-center justify-center gap-2 transition-all hover:scale-[1.02] active:scale-[0.98] duration-200  cursor-pointer"
           >
             <Award className="w-4 h-4 text-amber-400" />
             <span>Leaderboard</span>

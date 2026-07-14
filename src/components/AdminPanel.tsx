@@ -234,7 +234,7 @@ export default function AdminPanel({ onResultsUpdated, onClose }: AdminPanelProp
 
   if (!isAuthenticated) {
     return (
-      <div className="w-full max-w-md mx-auto bg-white/5 border border-white/10 rounded-3xl p-6 backdrop-blur-xl shadow-2xl">
+      <div className="w-full max-w-md mx-auto bg-white/5 border border-white/10 rounded-3xl p-6  shadow-2xl">
         <div className="flex flex-col items-center text-center gap-2 mb-6 border-b border-white/5 pb-3">
           <div className="w-12 h-12 rounded-2xl bg-amber-400/10 border border-amber-400/20 flex items-center justify-center text-amber-400">
             <Lock className="w-5 h-5" />
@@ -289,7 +289,7 @@ export default function AdminPanel({ onResultsUpdated, onClose }: AdminPanelProp
   }
 
   return (
-    <div className="w-full max-w-md mx-auto bg-white/5 border border-white/10 rounded-3xl p-6 backdrop-blur-xl shadow-2xl space-y-6">
+    <div className="w-full max-w-md mx-auto bg-white/5 border border-white/10 rounded-3xl p-6  shadow-2xl space-y-6">
       <div className="flex items-center justify-between border-b border-white/5 pb-4">
         <div className="flex items-center gap-2">
           <Settings className="w-5 h-5 text-amber-400" />

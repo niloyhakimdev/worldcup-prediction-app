@@ -100,7 +100,7 @@ export default function TrendingCarousel({ predictions, onSelectPrediction }: Tr
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.4 }}
               onClick={() => onSelectPrediction(activePred)}
-              className="bg-gradient-to-r from-amber-500/10 to-yellow-500/5 border border-amber-400/20 hover:border-amber-400/40 rounded-3xl p-4.5 cursor-pointer backdrop-blur-md relative overflow-hidden transition-all duration-300 group"
+              className="bg-gradient-to-r from-amber-500/10 to-yellow-500/5 border border-amber-400/20 hover:border-amber-400/40 rounded-3xl p-4.5 cursor-pointer  relative overflow-hidden transition-all duration-300 group"
             >
               {/* Background ambient light */}
               <div className="absolute -right-6 -top-6 w-16 h-16 bg-amber-400/10 blur-[20px] pointer-events-none" />
@@ -108,7 +108,7 @@ export default function TrendingCarousel({ predictions, onSelectPrediction }: Tr
               <div className="flex items-center justify-between border-b border-white/5 pb-2.5">
                 <div className="flex items-center gap-2">
                   <img 
-                    src={activePred.avatar || `https://api.dicebear.com/7.x/adventurer/svg?seed=${encodeURIComponent(activePred.name)}`}
+                    src={activePred.avatar || `https://api.dicebear.com/7.x/adventurer/png?seed=${encodeURIComponent(activePred.name)}`}
                     alt="" 
                     className="w-6.5 h-6.5 rounded-full bg-white/5 border border-white/10 shrink-0"
                     referrerPolicy="no-referrer"
@@ -212,7 +212,7 @@ export default function TrendingCarousel({ predictions, onSelectPrediction }: Tr
                 const matchPred = predictions.find(p => p.id === activeComment.predictionId);
                 if (matchPred) onSelectPrediction(matchPred);
               }}
-              className="bg-white/5 border border-white/10 hover:border-amber-400/25 rounded-3xl p-4 cursor-pointer backdrop-blur-md flex flex-col gap-2.5 transition-all duration-300 group"
+              className="bg-white/5 border border-white/10 hover:border-amber-400/25 rounded-3xl p-4 cursor-pointer  flex flex-col gap-2.5 transition-all duration-300 group"
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">

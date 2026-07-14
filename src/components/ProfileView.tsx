@@ -158,7 +158,7 @@ export default function ProfileView({ onBack, myPredictionId, results }: Profile
     day: "numeric"
   });
 
-  const profileAvatarUrl = `https://api.dicebear.com/7.x/adventurer/svg?seed=${encodeURIComponent(localUser.username)}`;
+  const profileAvatarUrl = `https://api.dicebear.com/7.x/adventurer/png?seed=${encodeURIComponent(localUser.username)}`;
 
   return (
     <div id="premium-profile-panel" className="space-y-6 max-w-md mx-auto">
@@ -179,13 +179,13 @@ export default function ProfileView({ onBack, myPredictionId, results }: Profile
 
       {/* Profile Info Header */}
       <div className="relative bg-zinc-900 border border-white/10 rounded-3xl p-6 text-center shadow-md">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-amber-500/5 rounded-full blur-[80px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-[#18181b] rounded-3xl pointer-events-none" />
 
         <div className="flex flex-col items-center space-y-4">
           
           {/* Glowing Avatar */}
           <div className="relative group">
-            <div className="absolute inset-0 bg-gradient-to-tr from-amber-400 to-amber-600 rounded-full blur-md opacity-40 group-hover:opacity-70 transition-opacity" />
+            <div className="absolute inset-0 bg-[#18181b] border border-amber-400/20 rounded-full opacity-40 group-hover:opacity-70 transition-opacity" />
             <img 
               src={profileAvatarUrl} 
               alt="Avatar" 

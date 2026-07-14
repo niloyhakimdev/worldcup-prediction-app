@@ -192,7 +192,7 @@ export default function DiscussionView({
         predictionId: prediction.id,
         text: commentText.trim(),
         username: localUser.username,
-        avatar: `https://api.dicebear.com/7.x/adventurer/svg?seed=${encodeURIComponent(localUser.username)}`,
+        avatar: `https://api.dicebear.com/7.x/adventurer/png?seed=${encodeURIComponent(localUser.username)}`,
         created_at: Date.now(),
         likes: 0,
         liked_by: [],
@@ -221,7 +221,7 @@ export default function DiscussionView({
         predictionId: prediction.id,
         text: replyText.trim(),
         username: localUser.username,
-        avatar: `https://api.dicebear.com/7.x/adventurer/svg?seed=${encodeURIComponent(localUser.username)}`,
+        avatar: `https://api.dicebear.com/7.x/adventurer/png?seed=${encodeURIComponent(localUser.username)}`,
         created_at: Date.now(),
         likes: 0,
         liked_by: [],
@@ -459,7 +459,7 @@ export default function DiscussionView({
         <div className="flex items-center justify-between border-b border-white/5 pb-3">
           <div className="flex items-center gap-2">
             <img 
-              src={prediction.avatar || `https://api.dicebear.com/7.x/adventurer/svg?seed=${encodeURIComponent(prediction.name)}`}
+              src={(prediction.avatar || '').replace('/adventurer/svg', '/adventurer/png') || `https://api.dicebear.com/7.x/adventurer/png?seed=${encodeURIComponent(prediction.name)}`}
               alt="" 
               className="w-8 h-8 rounded-full bg-white/10 border border-white/10 shadow-sm"
               referrerPolicy="no-referrer"

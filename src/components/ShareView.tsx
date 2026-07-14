@@ -103,7 +103,7 @@ export default function ShareView({ prediction, onBackToHome, isOwner = false }:
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
-        className="relative overflow-hidden bg-white/5 border border-white/10 rounded-3xl p-6 backdrop-blur-xl shadow-2xl"
+        className="relative overflow-hidden bg-white/5 border border-white/10 rounded-3xl p-6  shadow-2xl"
       >
         {/* Visual highlight */}
         <div className="absolute -top-12 -right-12 w-32 h-32 bg-amber-500/10 blur-3xl rounded-full" />

@@ -45,7 +45,8 @@ export default function CommunityFeed({ onSelectPrediction, myPredictionId }: Co
       const list: Prediction[] = [];
       snapshot.forEach((docSnap) => {
         const data = docSnap.data();
-        list.push({ id: docSnap.id, ...data } as Prediction);
+        if (data.avatar) data.avatar = data.avatar.replace("/adventurer/svg", "/adventurer/png");
+      list.push({ id: docSnap.id, ...data } as Prediction);
       });
       setPredictions(list);
       setLoading(false);
@@ -104,7 +105,7 @@ export default function CommunityFeed({ onSelectPrediction, myPredictionId }: Co
         </div>
 
         {/* Search, Filter, Sort Controls */}
-        <div className="space-y-2 bg-white/5 border border-white/10 p-3.5 rounded-2xl backdrop-blur-xl">
+        <div className="space-y-2 bg-white/5 border border-white/10 p-3.5 rounded-2xl ">
           <div className="relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
             <input
@@ -168,7 +169,7 @@ export default function CommunityFeed({ onSelectPrediction, myPredictionId }: Co
           <AnimatePresence initial={false}>
             {filteredPredictions.slice(0, visibleCount).map((pred) => {
               const userAvatarSeed = encodeURIComponent(pred.name);
-              const avatarUrl = pred.avatar || `https://api.dicebear.com/7.x/adventurer/svg?seed=${userAvatarSeed}`;
+              const avatarUrl = pred.avatar || `https://api.dicebear.com/7.x/adventurer/png?seed=${userAvatarSeed}`;
               const isUserOwn = pred.id === myPredictionId;
 
               return (
@@ -178,7 +179,7 @@ export default function CommunityFeed({ onSelectPrediction, myPredictionId }: Co
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0 }}
                   onClick={() => onSelectPrediction(pred)}
-                  className={`group relative overflow-hidden bg-white/5 hover:bg-white/10 border rounded-3xl p-4.5 transition-all duration-300 cursor-pointer flex flex-col gap-3.5 backdrop-blur-xl ${
+                  className={`group relative overflow-hidden bg-white/5 hover:bg-white/10 border rounded-3xl p-4.5 transition-all duration-300 cursor-pointer flex flex-col gap-3.5  ${
                     isUserOwn 
                       ? "border-amber-400/30 shadow-lg shadow-amber-500/5 bg-gradient-to-br from-amber-400/5 to-transparent" 
                       : "border-white/5 hover:border-amber-400/25"

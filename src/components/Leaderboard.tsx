@@ -36,7 +36,11 @@ export default function Leaderboard({ onViewPrediction, results }: LeaderboardPr
     setError("");
     try {
       const data = await getAllPredictions();
-      setPredictions(data);
+      const sanitizedData = data.map(p => {
+        if (p.avatar) p.avatar = p.avatar.replace("/adventurer/svg", "/adventurer/png");
+        return p;
+      });
+      setPredictions(sanitizedData);
     } catch (err: any) {
       console.error(err);
       setError("Could not load leaderboard. Please try again.");
@@ -153,7 +157,7 @@ export default function Leaderboard({ onViewPrediction, results }: LeaderboardPr
     <div className="space-y-6 w-full max-w-md mx-auto">
       {/* ANIMATED PODIUM FOR TOP 3 STANDINGS */}
       {!loading && sortedLeaderboard.length >= 3 && (
-        <div id="podium-section" className="relative bg-white/5 border border-white/10 rounded-[2.5rem] p-5 backdrop-blur-xl shadow-2xl overflow-hidden">
+        <div id="podium-section" className="relative bg-white/5 border border-white/10 rounded-[2.5rem] p-5  shadow-2xl overflow-hidden">
           {/* Subtle gold lights background */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-40 bg-amber-500/10 rounded-full blur-[60px] pointer-events-none" />
           
@@ -175,7 +179,7 @@ export default function Leaderboard({ onViewPrediction, results }: LeaderboardPr
                 <div className="relative">
                   <div className="absolute inset-0 bg-slate-300 rounded-full blur-sm opacity-20 group-hover:opacity-40 transition-opacity" />
                   <img 
-                    src={`https://api.dicebear.com/7.x/adventurer/svg?seed=${encodeURIComponent(sortedLeaderboard[1].name)}`} 
+                    src={`https://api.dicebear.com/7.x/adventurer/png?seed=${encodeURIComponent(sortedLeaderboard[1].name)}`} 
                     alt="" 
                     className="relative w-12 h-12 rounded-full border-2 border-slate-300 bg-zinc-900" 
                   />
@@ -212,7 +216,7 @@ export default function Leaderboard({ onViewPrediction, results }: LeaderboardPr
                   <Crown className="w-5 h-5 text-amber-400 absolute -top-4.5 left-1/2 -translate-x-1/2 filter drop-shadow-md animate-bounce" />
                   <div className="absolute inset-0 bg-amber-400 rounded-full blur-sm opacity-30 group-hover:opacity-50 transition-opacity" />
                   <img 
-                    src={`https://api.dicebear.com/7.x/adventurer/svg?seed=${encodeURIComponent(sortedLeaderboard[0].name)}`} 
+                    src={`https://api.dicebear.com/7.x/adventurer/png?seed=${encodeURIComponent(sortedLeaderboard[0].name)}`} 
                     alt="" 
                     className="relative w-15 h-15 rounded-full border-2 border-amber-400 bg-zinc-900" 
                   />
@@ -248,7 +252,7 @@ export default function Leaderboard({ onViewPrediction, results }: LeaderboardPr
                 <div className="relative">
                   <div className="absolute inset-0 bg-amber-700 rounded-full blur-sm opacity-20 group-hover:opacity-40 transition-opacity" />
                   <img 
-                    src={`https://api.dicebear.com/7.x/adventurer/svg?seed=${encodeURIComponent(sortedLeaderboard[2].name)}`} 
+                    src={`https://api.dicebear.com/7.x/adventurer/png?seed=${encodeURIComponent(sortedLeaderboard[2].name)}`} 
                     alt="" 
                     className="relative w-11 h-11 rounded-full border-2 border-amber-700 bg-zinc-900" 
                   />
@@ -280,7 +284,7 @@ export default function Leaderboard({ onViewPrediction, results }: LeaderboardPr
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="relative overflow-hidden bg-gradient-to-r from-amber-400/10 via-amber-400/5 to-transparent border border-amber-400/20 rounded-3xl p-5 backdrop-blur-xl shadow-xl"
+          className="relative overflow-hidden bg-gradient-to-r from-amber-400/10 via-amber-400/5 to-transparent border border-amber-400/20 rounded-3xl p-5  shadow-xl"
         >
           <div className="absolute top-2 right-2 opacity-15">
             <Crown className="w-16 h-16 text-amber-400 animate-pulse" />
@@ -325,7 +329,7 @@ export default function Leaderboard({ onViewPrediction, results }: LeaderboardPr
       )}
 
       {/* Leaderboard Controls */}
-      <div className="flex items-center justify-between gap-3 bg-white/5 border border-white/10 p-3.5 rounded-2xl backdrop-blur-xl">
+      <div className="flex items-center justify-between gap-3 bg-white/5 border border-white/10 p-3.5 rounded-2xl ">
         <div className="relative flex-1">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
           <input
@@ -347,7 +351,7 @@ export default function Leaderboard({ onViewPrediction, results }: LeaderboardPr
       </div>
 
       {/* Leaderboard Entries */}
-      <div className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden backdrop-blur-xl">
+      <div className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden ">
         {/* Table Header */}
         <div className="grid grid-cols-12 gap-1 px-4 py-3 bg-white/5 border-b border-white/10 text-[9px] font-bold uppercase tracking-wider text-gray-400">
           <span className="col-span-2 text-center">Rank</span>
@@ -386,7 +390,7 @@ export default function Leaderboard({ onViewPrediction, results }: LeaderboardPr
                   minute: "2-digit"
                 });
 
-                const userAvatarUrl = `https://api.dicebear.com/7.x/adventurer/svg?seed=${encodeURIComponent(entry.name)}`;
+                const userAvatarUrl = `https://api.dicebear.com/7.x/adventurer/png?seed=${encodeURIComponent(entry.name)}`;
 
                 return (
                   <motion.div

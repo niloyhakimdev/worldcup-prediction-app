@@ -206,7 +206,7 @@ export default function PredictionForm({ onSuccess, onCancel, existingPrediction
   };
 
   return (
-    <div className="w-full max-w-md mx-auto bg-white/5 border border-white/10 rounded-3xl p-6 backdrop-blur-xl shadow-2xl">
+    <div className="w-full max-w-md mx-auto bg-white/5 border border-white/10 rounded-3xl p-6  shadow-2xl">
       <div className="flex items-center gap-2 mb-6 border-b border-white/5 pb-3">
         <Trophy className="w-5 h-5 text-amber-400" />
         <h2 className="text-lg font-black uppercase italic text-white tracking-wide">Submit Predictions</h2>

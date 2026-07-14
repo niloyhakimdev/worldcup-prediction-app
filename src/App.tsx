@@ -116,7 +116,9 @@ export default function App() {
     const unsubscribe = onSnapshot(q, (snapshot) => {
       const list: Prediction[] = [];
       snapshot.forEach((docSnap) => {
-        list.push({ id: docSnap.id, ...docSnap.data() } as Prediction);
+        const data = docSnap.data();
+        if (data.avatar) data.avatar = data.avatar.replace("/adventurer/svg", "/adventurer/png");
+        list.push({ id: docSnap.id, ...data } as Prediction);
       });
       setAllPredictions(list);
     }, (error) => {
@@ -272,7 +274,7 @@ export default function App() {
           <div className="flex items-center gap-2">
             <button
               onClick={() => setView(view === "admin" ? "home" : "admin")}
-              className={`p-2 rounded-xl border transition-all backdrop-blur-md cursor-pointer ${
+              className={`p-2 rounded-xl border transition-all  cursor-pointer ${
                 view === "admin"
                   ? "bg-amber-400 border-amber-400 text-black shadow-lg shadow-amber-400/20"
                   : "bg-white/5 border-white/10 text-gray-400 hover:text-white"
@@ -291,7 +293,7 @@ export default function App() {
               initial={{ opacity: 0, y: -20, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -10, scale: 0.95 }}
-              className="bg-gradient-to-r from-amber-500/10 to-amber-600/5 border border-amber-400/20 rounded-2xl p-3.5 flex items-start gap-2.5 shadow-xl shadow-amber-500/5 backdrop-blur-md relative overflow-hidden"
+              className="bg-gradient-to-r from-amber-500/10 to-amber-600/5 border border-amber-400/20 rounded-2xl p-3.5 flex items-start gap-2.5 shadow-xl shadow-amber-500/5  relative overflow-hidden"
             >
               <div className="w-6.5 h-6.5 rounded-full bg-amber-400/10 flex items-center justify-center text-amber-400 shrink-0">
                 <Bell className="w-3.5 h-3.5 animate-bounce" />
@@ -310,7 +312,7 @@ export default function App() {
           {view === "home" && (
             <div className="space-y-6">
               {/* Hanging Banner / Announcement */}
-              <div className="relative overflow-hidden bg-gradient-to-r from-amber-500/20 via-yellow-500/10 to-amber-500/20 border border-amber-400/30 rounded-3xl p-4 shadow-lg shadow-amber-500/10 backdrop-blur-md">
+              <div className="relative overflow-hidden bg-gradient-to-r from-amber-500/20 via-yellow-500/10 to-amber-500/20 border border-amber-400/30 rounded-3xl p-4 shadow-lg shadow-amber-500/10 ">
                 {/* Decorative background lights */}
                 <div className="absolute top-0 right-0 w-24 h-24 bg-amber-400/10 blur-xl pointer-events-none" />
                 <div className="absolute bottom-0 left-0 w-24 h-24 bg-yellow-400/5 blur-xl pointer-events-none" />
@@ -361,7 +363,7 @@ export default function App() {
                     setSelectedPrediction(myPrediction);
                     setView("discussion");
                   }}
-                  className="relative overflow-hidden bg-white/5 border border-amber-500/30 hover:border-amber-400 rounded-3xl p-5 shadow-xl shadow-amber-500/5 cursor-pointer transition-all duration-300 hover:scale-[1.01] group backdrop-blur-xl"
+                  className="relative overflow-hidden bg-white/5 border border-amber-500/30 hover:border-amber-400 rounded-3xl p-5 shadow-xl shadow-amber-500/5 cursor-pointer transition-all duration-300 hover:scale-[1.01] group "
                 >
                   <div className="absolute -right-6 -bottom-6 w-20 h-20 bg-amber-400/10 blur-[25px] pointer-events-none group-hover:bg-amber-400/15 transition-all duration-300" />
                   
@@ -460,7 +462,7 @@ export default function App() {
               </div>
 
               {/* FAN CHAMPION VOTING (Section 2) */}
-              <div className="bg-white/5 border border-white/10 rounded-3xl p-5 space-y-4 backdrop-blur-md">
+              <div className="bg-white/5 border border-white/10 rounded-3xl p-5 space-y-4 ">
                 <div className="flex items-center justify-between border-b border-white/5 pb-3">
                   <div className="flex items-center gap-2">
                     <TrophyIcon className="w-4 h-4 text-amber-400" />
@@ -501,7 +503,7 @@ export default function App() {
               </div>
 
               {/* POPULAR PICKS STATS */}
-              <div className="bg-white/5 border border-white/10 rounded-3xl p-5 space-y-4 backdrop-blur-md">
+              <div className="bg-white/5 border border-white/10 rounded-3xl p-5 space-y-4 ">
                 <div className="flex items-center justify-between border-b border-white/5 pb-3">
                   <div className="flex items-center gap-2">
                     <Activity className="w-4 h-4 text-amber-400" />
@@ -623,7 +625,7 @@ export default function App() {
         
 
         {/* BOTTOM NAVIGATION BAR */}
-        <nav className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md bg-black/90 border-t border-white/10 px-6 py-3 flex items-center justify-between backdrop-blur-lg z-50 rounded-t-[1.5rem] shadow-[0_-10px_25px_rgba(0,0,0,0.5)]">
+        <nav className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md bg-black/90 border-t border-white/10 px-6 py-3 flex items-center justify-between z-50 rounded-t-[1.5rem] shadow-[0_-10px_25px_rgba(0,0,0,0.8)]">
           <button 
             onClick={() => { setView("home"); setSelectedPrediction(null); }}
             className={`flex flex-col items-center gap-1 transition-colors cursor-pointer ${view === "home" ? "text-amber-400 font-extrabold scale-105" : "text-gray-400 hover:text-white"}`}

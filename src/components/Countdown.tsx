@@ -65,28 +65,28 @@ export default function Countdown({ targetDate, onExpire }: CountdownProps) {
         <span>Predictions Lock in</span>
       </div>
       <div className="flex items-center gap-2">
-        <div className="flex flex-col items-center bg-white/5 border border-white/10 rounded-xl p-2.5 min-w-[50px] md:min-w-[60px] backdrop-blur-md">
+        <div className="flex flex-col items-center bg-white/5 border border-white/10 rounded-xl p-2.5 min-w-[50px] md:min-w-[60px] ">
           <span className="text-lg md:text-xl font-bold text-white font-mono leading-none">
             {String(timeLeft.days).padStart(2, "0")}
           </span>
           <span className="text-[10px] text-gray-400 font-medium uppercase mt-1">Days</span>
         </div>
         <span className="text-gray-500 font-bold">:</span>
-        <div className="flex flex-col items-center bg-white/5 border border-white/10 rounded-xl p-2.5 min-w-[50px] md:min-w-[60px] backdrop-blur-md">
+        <div className="flex flex-col items-center bg-white/5 border border-white/10 rounded-xl p-2.5 min-w-[50px] md:min-w-[60px] ">
           <span className="text-lg md:text-xl font-bold text-white font-mono leading-none">
             {String(timeLeft.hours).padStart(2, "0")}
           </span>
           <span className="text-[10px] text-gray-400 font-medium uppercase mt-1">Hrs</span>
         </div>
         <span className="text-gray-500 font-bold">:</span>
-        <div className="flex flex-col items-center bg-white/5 border border-white/10 rounded-xl p-2.5 min-w-[50px] md:min-w-[60px] backdrop-blur-md">
+        <div className="flex flex-col items-center bg-white/5 border border-white/10 rounded-xl p-2.5 min-w-[50px] md:min-w-[60px] ">
           <span className="text-lg md:text-xl font-bold text-white font-mono leading-none">
             {String(timeLeft.minutes).padStart(2, "0")}
           </span>
           <span className="text-[10px] text-gray-400 font-medium uppercase mt-1">Mins</span>
         </div>
         <span className="text-gray-500 font-bold">:</span>
-        <div className="flex flex-col items-center bg-white/5 border border-white/10 rounded-xl p-2.5 min-w-[50px] md:min-w-[60px] backdrop-blur-md">
+        <div className="flex flex-col items-center bg-white/5 border border-white/10 rounded-xl p-2.5 min-w-[50px] md:min-w-[60px] ">
           <span className="text-lg md:text-xl font-bold text-amber-400 font-mono leading-none">
             {String(timeLeft.seconds).padStart(2, "0")}
           </span>

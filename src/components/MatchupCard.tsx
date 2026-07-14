@@ -32,7 +32,7 @@ export default function MatchupCard({ team1, team2, winner, onClick, statusText 
       whileHover={{ y: -4, scale: 1.02 }}
       transition={{ duration: 0.2 }}
       onClick={onClick}
-      className={`relative w-full overflow-hidden bg-white/5 border border-white/10 rounded-3xl p-5 backdrop-blur-md ${
+      className={`relative w-full overflow-hidden bg-white/5 border border-white/10 rounded-3xl p-5  ${
         onClick ? "cursor-pointer hover:border-amber-400/30" : ""
       }`}
     >
