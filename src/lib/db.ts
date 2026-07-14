@@ -146,198 +146,142 @@ export async function publishResultsAndCalculateScores(results: AdminResults): P
  * Seeds the database with mock predictions from famous figures and Bangladeshi fans
  */
 export async function seedMockPredictions(): Promise<void> {
-  const mockPredictions: Omit<Prediction, "score">[] = [
-    {
-      id: "mock_messi",
-      name: "Lionel Messi 🐐",
-      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Messi",
-      match1: "Spain",
-      match2: "Argentina",
-      champion: "Argentina",
-      match1ScoreFrance: 1,
-      match1ScoreSpain: 2,
-      match2ScoreEngland: 1,
-      match2ScoreArgentina: 3,
-      created_at: Date.now() - 3600000 * 5, // 5 hours ago
-      share_id: "mock_messi",
-      likes_count: 5200,
-      comments_count: 3,
-      agrees_count: 4800,
-      views_count: 85000,
-      shares_count: 1200
-    },
-    {
-      id: "mock_ronaldo",
-      name: "Cristiano Ronaldo 👑",
-      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Ronaldo",
-      match1: "France",
-      match2: "Argentina",
-      champion: "France",
-      match1ScoreFrance: 3,
-      match1ScoreSpain: 2,
-      match2ScoreEngland: 0,
-      match2ScoreArgentina: 1,
-      created_at: Date.now() - 3600000 * 4, // 4 hours ago
-      share_id: "mock_ronaldo",
-      likes_count: 4800,
-      comments_count: 2,
-      agrees_count: 3100,
-      views_count: 79000,
-      shares_count: 950
-    },
-    {
-      id: "mock_shakib",
-      name: "Shakib Al Hasan 🏏",
-      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Shakib",
-      match1: "Spain",
-      match2: "Argentina",
-      champion: "Argentina",
-      match1ScoreFrance: 1,
-      match1ScoreSpain: 2,
-      match2ScoreEngland: 0,
-      match2ScoreArgentina: 2,
-      created_at: Date.now() - 3600000 * 3, // 3 hours ago
-      share_id: "mock_shakib",
-      likes_count: 1200,
-      comments_count: 2,
-      agrees_count: 980,
-      views_count: 15000,
-      shares_count: 180
-    },
-    {
-      id: "mock_niloy",
-      name: "Niloy Hakim 🏆",
-      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Niloy",
-      match1: "France",
-      match2: "Argentina",
-      champion: "Argentina",
-      match1ScoreFrance: 2,
-      match1ScoreSpain: 1,
-      match2ScoreEngland: 1,
-      match2ScoreArgentina: 2,
-      created_at: Date.now() - 3600000 * 2, // 2 hours ago
-      share_id: "mock_niloy",
-      likes_count: 15,
-      comments_count: 1,
-      agrees_count: 12,
-      views_count: 240,
-      shares_count: 8
-    },
-    {
-      id: "mock_tamim",
-      name: "Tamim Iqbal 🏏",
-      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Tamim",
-      match1: "Spain",
-      match2: "Argentina",
-      champion: "Argentina",
-      match1ScoreFrance: 1,
-      match1ScoreSpain: 3,
-      match2ScoreEngland: 1,
-      match2ScoreArgentina: 2,
-      created_at: Date.now() - 3600000 * 1, // 1 hour ago
-      share_id: "mock_tamim",
-      likes_count: 650,
-      comments_count: 2,
-      agrees_count: 480,
-      views_count: 6200,
-      shares_count: 44
-    },
-    {
-      id: "mock_pep",
-      name: "Pep Guardiola 🧠",
-      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Pep",
-      match1: "Spain",
-      match2: "Argentina",
-      champion: "Spain",
-      match1ScoreFrance: 1,
-      match1ScoreSpain: 2,
-      match2ScoreEngland: 1,
-      match2ScoreArgentina: 2,
-      created_at: Date.now() - 1800000, // 30 mins ago
-      share_id: "mock_pep",
-      likes_count: 1800,
-      comments_count: 1,
-      agrees_count: 1400,
-      views_count: 24000,
-      shares_count: 320
-    },
-    {
-      id: "mock_elon",
-      name: "Elon Musk 🚀",
-      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Elon",
-      match1: "France",
-      match2: "England",
-      champion: "England",
-      match1ScoreFrance: 4,
-      match1ScoreSpain: 3,
-      match2ScoreEngland: 3,
-      match2ScoreArgentina: 0,
-      created_at: Date.now() - 900000, // 15 mins ago
-      share_id: "mock_elon",
-      likes_count: 14500,
-      comments_count: 2,
-      agrees_count: 8500,
-      views_count: 350000,
-      shares_count: 2800
-    },
-    {
-      id: "mock_fahim",
-      name: "Fahim Chowdhury 🇧🇩",
-      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Fahim",
-      match1: "Spain",
-      match2: "Argentina",
-      champion: "Argentina",
-      match1ScoreFrance: 0,
-      match1ScoreSpain: 2,
-      match2ScoreEngland: 1,
-      match2ScoreArgentina: 3,
-      created_at: Date.now() - 600000, // 10 mins ago
-      share_id: "mock_fahim",
-      likes_count: 32,
-      comments_count: 1,
-      agrees_count: 24,
-      views_count: 450,
-      shares_count: 12
-    },
-    {
-      id: "mock_zuck",
-      name: "Mark Zuckerberg 👥",
-      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Zuck",
-      match1: "Spain",
-      match2: "Argentina",
-      champion: "Argentina",
-      match1ScoreFrance: 1,
-      match1ScoreSpain: 2,
-      match2ScoreEngland: 1,
-      match2ScoreArgentina: 2,
-      created_at: Date.now() - 300000, // 5 mins ago
-      share_id: "mock_zuck",
-      likes_count: 3400,
-      comments_count: 1,
-      agrees_count: 2900,
-      views_count: 48000,
-      shares_count: 410
-    },
-    {
-      id: "mock_mrbeast",
-      name: "MrBeast 🎁",
-      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=MrBeast",
-      match1: "France",
-      match2: "Argentina",
-      champion: "Argentina",
-      match1ScoreFrance: 3,
-      match1ScoreSpain: 1,
-      match2ScoreEngland: 2,
-      match2ScoreArgentina: 4,
-      created_at: Date.now() - 120000, // 2 mins ago
-      share_id: "mock_mrbeast",
-      likes_count: 22000,
-      comments_count: 2,
-      agrees_count: 18500,
-      views_count: 650000,
-      shares_count: 5900
-    }
+  const firstNames = [
+    "Rahim", "Karim", "Abul", "Sabbir", "Fahim", "Tanvir", "Naim", "Arif", "Imran", "Asif", 
+    "Sujon", "Riad", "Rubel", "Soumya", "Taskin", "Shoriful", "Mehidy", "Liton", "Anamul", "Nasir", 
+    "Imrul", "Mominul", "Taijul", "Ebadot", "Jahid", "Mamun", "Siddik", "Rana", "Babul", "Farhan",
+    "Nayeem", "Saif", "Yeasin", "Sohel", "Biplob", "Mithun", "Zia", "Kamal", "Zafar", "Tariq",
+    "Mostafiz", "Hasan", "Mizan", "Rafiq", "Jamil", "Habib", "Rashed", "Shaheen", "Selim", "Khorshed"
   ];
+
+  const lastNames = [
+    "Hasan", "Rahman", "Islam", "Chowdhury", "Khan", "Ahmed", "Iqbal", "Ali", "Uddin", "Sarkar", 
+    "Patwary", "Bhuiyan", "Siddique", "Talukder", "Miah", "Akand", "Munshi", "Gazi", "Molla", "Kazi",
+    "Patwari", "Howlader", "Majumder", "Dewan", "Bahar", "Sikder", "Kundu", "Bose", "Dutta", "Paul"
+  ];
+
+  const famousBangladeshis = [
+    { name: "Jamal Bhuyan 🇧🇩⚽", avatarSeed: "Jamal" },
+    { name: "Topu Barman 🛡️", avatarSeed: "Topu" },
+    { name: "Shekh Morsalin ⚡", avatarSeed: "Morsalin" },
+    { name: "Mashrafe Mortaza 🏏", avatarSeed: "Mashrafe" },
+    { name: "Mushfiqur Rahim 🏏", avatarSeed: "Mushfiqur" },
+    { name: "Mahmudullah Riyad 🏏", avatarSeed: "Riyad" },
+    { name: "Mustafizur Rahman 🏏", avatarSeed: "Fizz" },
+    { name: "Taskin Ahmed 🏏", avatarSeed: "Taskin" },
+    { name: "Liton Das 🏏", avatarSeed: "Liton" },
+    { name: "Ayman Sadiq 🎓", avatarSeed: "Ayman" },
+    { name: "Solaiman Shukhon 🎙️", avatarSeed: "Solaiman" }
+  ];
+
+  const famousGlobals = [
+    { name: "Lionel Messi 🐐", avatarSeed: "Messi" },
+    { name: "Cristiano Ronaldo 👑", avatarSeed: "Ronaldo" },
+    { name: "Pep Guardiola 🧠", avatarSeed: "Pep" },
+    { name: "Elon Musk 🚀", avatarSeed: "Elon" },
+    { name: "Mark Zuckerberg 👥", avatarSeed: "Zuck" },
+    { name: "MrBeast 🎁", avatarSeed: "MrBeast" }
+  ];
+
+  const list: Omit<Prediction, "score">[] = [];
+
+  // Add globals
+  for (const glob of famousGlobals) {
+    const isMessi = glob.name.includes("Messi");
+    const isRonaldo = glob.name.includes("Ronaldo");
+    list.push({
+      id: "mock_" + glob.avatarSeed.toLowerCase(),
+      name: glob.name,
+      avatar: `https://api.dicebear.com/7.x/adventurer/svg?seed=${glob.avatarSeed}`,
+      match1: isMessi ? "Spain" : "France",
+      match2: "Argentina",
+      champion: isMessi ? "Argentina" : "France",
+      match1ScoreFrance: isMessi ? 1 : 3,
+      match1ScoreSpain: isMessi ? 2 : 2,
+      match2ScoreEngland: isMessi ? 1 : 0,
+      match2ScoreArgentina: isMessi ? 3 : 1,
+      created_at: Date.now() - 3600000 * 5,
+      share_id: "mock_" + glob.avatarSeed.toLowerCase(),
+      likes_count: isMessi ? 5200 : isRonaldo ? 4800 : 2500,
+      comments_count: isMessi ? 3 : isRonaldo ? 2 : 1,
+      agrees_count: isMessi ? 4800 : isRonaldo ? 3100 : 1800,
+      views_count: isMessi ? 85000 : isRonaldo ? 79000 : 40000,
+      shares_count: isMessi ? 1200 : isRonaldo ? 950 : 350
+    });
+  }
+
+  // Add famous Bangladeshis
+  for (const bd of famousBangladeshis) {
+    const m1ScoreFrance = Math.floor(Math.random() * 4);
+    const m1ScoreSpain = Math.floor(Math.random() * 4);
+    const m2ScoreEngland = Math.floor(Math.random() * 4);
+    const m2ScoreArgentina = Math.floor(Math.random() * 4);
+    const match1 = m1ScoreFrance > m1ScoreSpain ? "France" : "Spain";
+    const match2 = m2ScoreEngland > m2ScoreArgentina ? "England" : "Argentina";
+    const champion = Math.random() > 0.5 ? match1 : match2;
+
+    list.push({
+      id: "mock_" + bd.avatarSeed.toLowerCase(),
+      name: bd.name,
+      avatar: `https://api.dicebear.com/7.x/adventurer/svg?seed=${bd.avatarSeed}`,
+      match1,
+      match2,
+      champion,
+      match1ScoreFrance: m1ScoreFrance,
+      match1ScoreSpain: m1ScoreSpain,
+      match2ScoreEngland: m2ScoreEngland,
+      match2ScoreArgentina: m2ScoreArgentina,
+      created_at: Date.now() - 3600000 * (Math.random() * 24 + 6),
+      share_id: "mock_" + bd.avatarSeed.toLowerCase(),
+      likes_count: Math.floor(Math.random() * 800 + 400),
+      comments_count: bd.name.includes("Jamal") || bd.name.includes("Shakib") ? 2 : 0,
+      agrees_count: Math.floor(Math.random() * 600 + 200),
+      views_count: Math.floor(Math.random() * 10000 + 5000),
+      shares_count: Math.floor(Math.random() * 100 + 20)
+    });
+  }
+
+  // Add random Bangladeshi names up to 120 total
+  const generatedNamesSet = new Set<string>();
+  const totalEntries = 120;
+  
+  while (list.length < totalEntries) {
+    const fName = firstNames[Math.floor(Math.random() * firstNames.length)];
+    const lName = lastNames[Math.floor(Math.random() * lastNames.length)];
+    const fullName = `${fName} ${lName}`;
+    
+    if (!generatedNamesSet.has(fullName)) {
+      generatedNamesSet.add(fullName);
+      
+      const m1ScoreFrance = Math.floor(Math.random() * 4);
+      const m1ScoreSpain = Math.floor(Math.random() * 4);
+      const m2ScoreEngland = Math.floor(Math.random() * 4);
+      const m2ScoreArgentina = Math.floor(Math.random() * 4);
+      const match1 = m1ScoreFrance > m1ScoreSpain ? "France" : "Spain";
+      const match2 = m2ScoreEngland > m2ScoreArgentina ? "England" : "Argentina";
+      const champion = Math.random() > 0.5 ? match1 : match2;
+
+      list.push({
+        id: `gen_pred_${list.length}`,
+        name: fullName,
+        avatar: `https://api.dicebear.com/7.x/adventurer/svg?seed=${encodeURIComponent(fullName)}`,
+        match1,
+        match2,
+        champion,
+        match1ScoreFrance: m1ScoreFrance,
+        match1ScoreSpain: m1ScoreSpain,
+        match2ScoreEngland: m2ScoreEngland,
+        match2ScoreArgentina: m2ScoreArgentina,
+        created_at: Date.now() - 3600000 * (Math.random() * 48),
+        share_id: `gen_pred_${list.length}`,
+        likes_count: Math.floor(Math.random() * 180 + 5),
+        comments_count: 0,
+        agrees_count: Math.floor(Math.random() * 120 + 2),
+        views_count: Math.floor(Math.random() * 1500 + 20),
+        shares_count: Math.floor(Math.random() * 15)
+      });
+    }
+  }
 
   const mockComments = [
     {
@@ -360,18 +304,6 @@ export async function seedMockPredictions(): Promise<void> {
       avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Pep",
       created_at: Date.now() - 3600000 * 4.2,
       likes: 95,
-      liked_by: [],
-      reported: false,
-      isPinned: false
-    },
-    {
-      id: "comment_messi_3",
-      predictionId: "mock_messi",
-      text: "@Messi your predictions are always spot-on. Fingers crossed! 🤞",
-      username: "Niloy Hakim 🏆",
-      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Niloy",
-      created_at: Date.now() - 3600000 * 4.0,
-      likes: 35,
       liked_by: [],
       reported: false,
       isPinned: false
@@ -428,10 +360,10 @@ export async function seedMockPredictions(): Promise<void> {
       id: "comment_shakib_1",
       predictionId: "mock_shakib",
       text: "আর্জেন্টিনা ২-০ ইংল্যান্ড! অস্থির প্রেডিকশন সাকিব ভাই! 🔥🇧🇩",
-      username: "Niloy Hakim 🏆",
-      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Niloy",
+      username: "Jamal Bhuyan 🇧🇩⚽",
+      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Jamal",
       created_at: Date.now() - 3600000 * 2.8,
-      likes: 45,
+      likes: 245,
       liked_by: [],
       reported: false,
       isPinned: true
@@ -449,107 +381,56 @@ export async function seedMockPredictions(): Promise<void> {
       isPinned: false
     },
     {
-      id: "comment_niloy_1",
-      predictionId: "mock_niloy",
-      text: "শতভাগ একমত ভাই! আর্জেন্টিনা ফাইনাল জিতবেই। ⚽🇦🇷",
-      username: "Fahim Chowdhury 🇧🇩",
-      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Fahim",
-      created_at: Date.now() - 3600000 * 1.5,
-      likes: 4,
-      liked_by: [],
-      reported: false,
-      isPinned: false
-    },
-    {
-      id: "comment_tamim_1",
-      predictionId: "mock_tamim",
-      text: "Nice predictions Tamim. France vs Spain is going to be super tight.",
-      username: "Shakib Al Hasan 🏏",
-      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Shakib",
-      created_at: Date.now() - 3600000 * 0.9,
-      likes: 38,
+      id: "comment_jamal_1",
+      predictionId: "mock_jamal",
+      text: "Jamal bhai, exact prediction right hole BKSP code check korbo! ⚽🇧🇩",
+      username: "Shekh Morsalin ⚡",
+      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Morsalin",
+      created_at: Date.now() - 3600000 * 1.2,
+      likes: 92,
       liked_by: [],
       reported: false,
       isPinned: true
     },
     {
-      id: "comment_tamim_2",
-      predictionId: "mock_tamim",
-      text: "England won't lose to Argentina, my friend. England all the way! 🏴",
-      username: "Gary Lineker 🎙️",
-      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Lineker",
-      created_at: Date.now() - 3600000 * 0.8,
-      likes: 52,
-      liked_by: [],
-      reported: false,
-      isPinned: false
-    },
-    {
-      id: "comment_pep_1",
-      predictionId: "mock_pep",
-      text: "Spain is playing wonderful football under Pep's tactical style.",
-      username: "Mark Zuckerberg 👥",
-      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Zuck",
-      created_at: Date.now() - 1500000,
-      likes: 85,
-      liked_by: [],
-      reported: false,
-      isPinned: false
-    },
-    {
-      id: "comment_zuck_1",
-      predictionId: "mock_zuck",
-      text: "Agreed. Threads will collapse if Argentina wins, everyone will post! 😂",
-      username: "Elon Musk 🚀",
-      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Elon",
-      created_at: Date.now() - 250000,
-      likes: 1200,
-      liked_by: [],
-      reported: false,
-      isPinned: false
-    },
-    {
-      id: "comment_mrbeast_1",
-      predictionId: "mock_mrbeast",
-      text: "If this scores exact, I will personally subscribe to your channel! 😂",
-      username: "Cristiano Ronaldo 👑",
-      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Ronaldo",
-      created_at: Date.now() - 90000,
-      likes: 4500,
-      liked_by: [],
-      reported: false,
-      isPinned: true
-    },
-    {
-      id: "comment_mrbeast_2",
-      predictionId: "mock_mrbeast",
-      text: "MrBeast predicted France to beat Spain? Awesome!",
-      username: "Lionel Messi 🐐",
-      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Messi",
-      created_at: Date.now() - 70000,
-      likes: 2100,
+      id: "comment_jamal_2",
+      predictionId: "mock_jamal",
+      text: "Argentina represents Latin football best, Jamal. Totally agree.",
+      username: "Mustafizur Rahman 🎯",
+      avatar: "https://api.dicebear.com/7.x/adventurer/svg?seed=Fizz",
+      created_at: Date.now() - 3600000 * 1.0,
+      likes: 54,
       liked_by: [],
       reported: false,
       isPinned: false
     }
   ];
 
-  const batch = writeBatch(db);
+  const batch1 = writeBatch(db);
+  const batch2 = writeBatch(db);
   
   // Seed predictions
-  for (const pred of mockPredictions) {
+  list.forEach((pred, index) => {
     const docRef = doc(db, PREDICTIONS_COLLECTION, pred.id);
-    batch.set(docRef, {
-      ...pred,
-      score: null
-    });
-  }
+    if (index < 100) {
+      batch1.set(docRef, { ...pred, score: null });
+    } else {
+      batch2.set(docRef, { ...pred, score: null });
+    }
+  });
 
   // Seed comments
   for (const comment of mockComments) {
     const docRef = doc(db, "comments", comment.id);
-    batch.set(docRef, comment);
+    if (list.length < 100) {
+      batch1.set(docRef, comment);
+    } else {
+      batch2.set(docRef, comment);
+    }
   }
 
-  await batch.commit();
+  await batch1.commit();
+  if (list.length > 100) {
+    await batch2.commit();
+  }
 }
