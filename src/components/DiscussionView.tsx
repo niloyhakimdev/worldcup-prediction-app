@@ -448,7 +448,7 @@ export default function DiscussionView({
       </div>
 
       {/* Main Prediction Details Card */}
-      <div className="relative overflow-hidden bg-zinc-900 border border-white/10 rounded-[2rem] p-5 shadow-2xl">
+      <div className="relative bg-zinc-900 border border-white/10 rounded-3xl p-5 shadow-md">
         
         {/* Glowing effect if Perfect Prediction */}
         {isPerfectPrediction && (

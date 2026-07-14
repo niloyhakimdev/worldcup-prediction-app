@@ -612,9 +612,9 @@ export default function App() {
           {view === "discussion" && selectedPrediction && (
             <motion.div
               key="discussion"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
             >
               <DiscussionView 
                 prediction={selectedPrediction}
