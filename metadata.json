@@ -1,0 +1,6 @@
+{
+  "name": "World Cup 2026 Semi Final Prediction",
+  "description": "Predict the FIFA World Cup 2026 Semi Finals and compete on the global leaderboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
