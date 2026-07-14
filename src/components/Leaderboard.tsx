@@ -118,7 +118,7 @@ export default function Leaderboard({ onViewPrediction, results }: LeaderboardPr
     });
 
   const filteredLeaderboard = sortedLeaderboard.filter((entry) =>
-    entry.name.toLowerCase().includes(searchQuery.toLowerCase())
+    (entry.name || "").toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   // Top predictor details

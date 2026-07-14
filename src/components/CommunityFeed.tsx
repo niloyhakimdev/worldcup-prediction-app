@@ -73,7 +73,7 @@ export default function CommunityFeed({ onSelectPrediction, myPredictionId }: Co
   // Filter and sort predictions
   const filteredPredictions = predictions
     .filter((p) => {
-      const matchesSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase());
+      const matchesSearch = (p.name || "").toLowerCase().includes(searchQuery.toLowerCase());
       const matchesFilter = filterChampion === "All" || p.champion === filterChampion;
       return matchesSearch && matchesFilter;
     })
